@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\engine">
+      <UniqueIdentifier>{abd84c36-af2b-45da-8c43-80d4639f9cdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\controller">
+      <UniqueIdentifier>{2d3ee380-a09b-4aa3-be90-9607fae40b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\render">
+      <UniqueIdentifier>{3bfe0432-1f81-40dc-aa6d-b25bd79f55f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
