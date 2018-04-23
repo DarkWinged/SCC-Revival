@@ -1,3 +1,6 @@
-﻿  stdafx.cpp
-  SCC-Shipbuilder.cpp
-  SCC-Shipbuilder.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\SCC-Shipbuilder\Debug\SCC-Shipbuilder.exe
+﻿  SCC-Shipbuilder.cpp
+c:\users\levi\source\repos\scc-revival\scc-shipbuilder\scc-shipbuilder.cpp(13): error C2065: 'cout': undeclared identifier
+c:\users\levi\source\repos\scc-revival\scc-shipbuilder\scc-shipbuilder.cpp(17): error C2065: 'cout': undeclared identifier
+c:\users\levi\source\repos\scc-revival\scc-shipbuilder\scc-shipbuilder.cpp(20): error C2065: 'cin': undeclared identifier
+c:\users\levi\source\repos\scc-revival\scc-shipbuilder\scc-shipbuilder.cpp(20): error C2228: left of '.get' must have class/struct/union
+  c:\users\levi\source\repos\scc-revival\scc-shipbuilder\scc-shipbuilder.cpp(20): note: type is 'unknown-type'

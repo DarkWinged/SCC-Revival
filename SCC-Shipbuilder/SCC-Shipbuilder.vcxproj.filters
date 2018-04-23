@@ -22,6 +22,15 @@
     <Filter Include="Header Files\render">
       <UniqueIdentifier>{3bfe0432-1f81-40dc-aa6d-b25bd79f55f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{0c7110f4-814e-4a48-af30-58d7ac0078b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\controller">
+      <UniqueIdentifier>{3c2ec4e0-f942-40ba-b193-88a00a8df107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\render">
+      <UniqueIdentifier>{1227b751-fa09-4805-8131-af63937abb90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
