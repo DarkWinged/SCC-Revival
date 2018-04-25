@@ -1,7 +1,0 @@
-﻿  Game.cpp
-  GameObject.cpp
-GameObject.cpp(44): warning C4482: nonstandard extension used: enum 'SDL_RendererFlip' used in qualified name
-  Image.cpp
-  Generating code
-  Finished generating code
-  ShellCoreCommandC++.vcxproj -> C:\Users\cesar\Documents\Visual Studio 2010\Projects\ShellCoreCommandC++\Release\ShellCoreCommandC++.exe
