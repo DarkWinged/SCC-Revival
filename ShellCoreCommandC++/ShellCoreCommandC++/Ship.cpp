@@ -48,7 +48,7 @@ Ship::~Ship() {
 
 void Ship::Update() {
 	// Update Rotation
-	if (TargetRotation != Rotation & (xTarPos != 0 | yTarPos != 0)) {
+	if (TargetRotation != Rotation && (xTarPos != 0 || yTarPos != 0)) {
 		// Acceleration is Rotation Speed
 		if (SDL_abs(Rotation - TargetRotation) < Acceleration)
 		{
@@ -66,7 +66,7 @@ void Ship::Update() {
 		}
 	}
 	//3.141592653589793238463
-	if (xTarPos != 0 | yTarPos != 0)
+	if (xTarPos != 0 || yTarPos != 0)
 	{
 		int rotPos = (int) (SDL_atan2(yTarPos, xTarPos) * (180.0 / 3.14));
 		SetTargetRotation(MathLib::grid(rotPos+90, 5));
@@ -85,8 +85,8 @@ void Ship::Render() {
 
 		double radRot = (SDL_floor(MathLib::grid(Rotation, 5) * 3.14)); // i do not know how to name these variables... so heh :P
 
-		rect->x = (part.xPos * SDL_cos(radRot / 180)) - (part.yPos * SDL_sin(radRot / 180)) + xPos - (part.partImage->xSize/2);
-		rect->y = (part.xPos * SDL_sin(radRot / 180)) + (part.yPos * SDL_cos(radRot / 180)) + yPos - (part.partImage->ySize/2);
+		rect->x = int((part.xPos * SDL_cos(radRot / 180)) - (part.yPos * SDL_sin(radRot / 180)) + xPos - (part.partImage->xSize/2));
+		rect->y = int((part.xPos * SDL_sin(radRot / 180)) + (part.yPos * SDL_cos(radRot / 180)) + yPos - (part.partImage->ySize/2))S;
 
 		rect->h = part.partImage->ySize;
 		rect->w = part.partImage->xSize;
