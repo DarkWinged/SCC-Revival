@@ -51,11 +51,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Users\Levi\source\repos\SCC-Revival\SDL2_image-2.0.3\include;C:\Users\Levi\source\repos\SCC-Revival\SDL2-2.0.8\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\include;%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Levi\source\repos\SCC-Revival\SDL2-2.0.8\lib\x86;C:\Users\Levi\source\repos\SCC-Revival\SDL2_image-2.0.3\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\lib\x86;%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\lib\x86</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -66,13 +66,13 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>C:\Users\Levi\source\repos\SCC-Revival\SDL2_image-2.0.3\include;C:\Users\Levi\source\repos\SCC-Revival\SDL2-2.0.8\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\include;%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\Levi\source\repos\SCC-Revival\SDL2-2.0.8\lib\x86;C:\Users\Levi\source\repos\SCC-Revival\SDL2_image-2.0.3\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\lib\x86;%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\lib\x86</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
