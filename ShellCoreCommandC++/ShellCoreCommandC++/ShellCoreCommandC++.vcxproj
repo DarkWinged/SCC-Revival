@@ -40,8 +40,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\cesar\Desktop\SDL2-2.0.8\include;C:\Users\cesar\Desktop\Dev\SDL2_image-2.0.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\cesar\Desktop\Dev\SDL2_image-2.0.1\lib\x86;C:\Users\cesar\Desktop\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\include;%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\lib\x86;%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
+    <EnableCppCoreCheck>true</EnableCppCoreCheck>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\Users\cesar\Desktop\SDL2-2.0.8\include;C:\Users\cesar\Desktop\Dev\SDL2_image-2.0.1\include;$(IncludePath)</IncludePath>
@@ -97,6 +98,84 @@
     <ClInclude Include="Ship.h" />
     <ClInclude Include="ShipPart.h" />
     <ClInclude Include="TextureManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\images\BigCenter1.png" />
+    <Image Include="assets\images\BigCenter2.png" />
+    <Image Include="assets\images\BigCenter3.png" />
+    <Image Include="assets\images\BigCore1.png" />
+    <Image Include="assets\images\BigSide1.png" />
+    <Image Include="assets\images\BigSide2.png" />
+    <Image Include="assets\images\BigSide3.png" />
+    <Image Include="assets\images\BigSide4.png" />
+    <Image Include="assets\images\BigSide5.png" />
+    <Image Include="assets\images\BigSide6.png" />
+    <Image Include="assets\images\BigWing1.png" />
+    <Image Include="assets\images\BigWing2.png" />
+    <Image Include="assets\images\BigWing3.png" />
+    <Image Include="assets\images\BigWing4.png" />
+    <Image Include="assets\images\BigWing5.png" />
+    <Image Include="assets\images\CompPassive.png" />
+    <Image Include="assets\images\CompUtil1.png" />
+    <Image Include="assets\images\CompUtil2.png" />
+    <Image Include="assets\images\CompUtil3.png" />
+    <Image Include="assets\images\CompWeaponB1.png" />
+    <Image Include="assets\images\CompWeaponH1.png" />
+    <Image Include="assets\images\CompWeaponH2.png" />
+    <Image Include="assets\images\CompWeaponM1.png" />
+    <Image Include="assets\images\CompWeaponM2.png" />
+    <Image Include="assets\images\CompWeaponM3.png" />
+    <Image Include="assets\images\CompWeaponS1.png" />
+    <Image Include="assets\images\CompWeaponS2.png" />
+    <Image Include="assets\images\CompWeaponS3.png" />
+    <Image Include="assets\images\MediumCenter1.png" />
+    <Image Include="assets\images\MediumCenter2.png" />
+    <Image Include="assets\images\MediumCenter3.png" />
+    <Image Include="assets\images\MediumCenter4.png" />
+    <Image Include="assets\images\MediumCenter5.png" />
+    <Image Include="assets\images\MediumCenter6.png" />
+    <Image Include="assets\images\MediumCore2.png" />
+    <Image Include="assets\images\MediumExtra1.png" />
+    <Image Include="assets\images\MediumExtra2.png" />
+    <Image Include="assets\images\MediumSide1.png" />
+    <Image Include="assets\images\MediumSide2.png" />
+    <Image Include="assets\images\MediumSide3.png" />
+    <Image Include="assets\images\MediumSide4.png" />
+    <Image Include="assets\images\MediumWing1.png" />
+    <Image Include="assets\images\MediumWing2.png" />
+    <Image Include="assets\images\MediumWing3.png" />
+    <Image Include="assets\images\MiniDrone1.png" />
+    <Image Include="assets\images\MiniDrone2.png" />
+    <Image Include="assets\images\MiniDrone3.png" />
+    <Image Include="assets\images\MiniDrone5.png" />
+    <Image Include="assets\images\SmallCenter1.png" />
+    <Image Include="assets\images\SmallCenter2.png" />
+    <Image Include="assets\images\SmallCenter3.png" />
+    <Image Include="assets\images\SmallCenter4.png" />
+    <Image Include="assets\images\SmallCenter5.png" />
+    <Image Include="assets\images\SmallCenter6.png" />
+    <Image Include="assets\images\SmallCenter7.png" />
+    <Image Include="assets\images\SmallCenter8.png" />
+    <Image Include="assets\images\SmallCenter9.png" />
+    <Image Include="assets\images\SmallCore1.png" />
+    <Image Include="assets\images\SmallCore2.png" />
+    <Image Include="assets\images\SmallSide1.png" />
+    <Image Include="assets\images\SmallSide2.png" />
+    <Image Include="assets\images\SmallSide3.png" />
+    <Image Include="assets\images\SmallSide4.png" />
+    <Image Include="assets\images\SmallWing1.png" />
+    <Image Include="assets\images\SmallWing2.png" />
+    <Image Include="assets\images\SmallWing3.png" />
+    <Image Include="assets\images\SpeederTank.png" />
+    <Image Include="assets\images\Tank2.png" />
+    <Image Include="assets\images\Tank3.png" />
+    <Image Include="assets\images\Tank4.png" />
+    <Image Include="assets\images\TankHerzog.png" />
+    <Image Include="assets\images\TurretDefense.png" />
+    <Image Include="assets\images\TurretHarvester.png" />
+    <Image Include="assets\images\TurretMissile.png" />
+    <Image Include="assets\images\TurretSiege.png" />
+    <Image Include="assets\images\TurretSpawn.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
