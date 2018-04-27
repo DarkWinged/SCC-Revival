@@ -86,7 +86,7 @@ void Ship::Render() {
 		double radRot = (SDL_floor(MathLib::grid(Rotation, 5) * 3.14)); // i do not know how to name these variables... so heh :P
 
 		rect->x = int((part.xPos * SDL_cos(radRot / 180)) - (part.yPos * SDL_sin(radRot / 180)) + xPos - (part.partImage->xSize/2));
-		rect->y = int((part.xPos * SDL_sin(radRot / 180)) + (part.yPos * SDL_cos(radRot / 180)) + yPos - (part.partImage->ySize/2))S;
+		rect->y = int((part.xPos * SDL_sin(radRot / 180)) + (part.yPos * SDL_cos(radRot / 180)) + yPos - (part.partImage->ySize/2));
 
 		rect->h = part.partImage->ySize;
 		rect->w = part.partImage->xSize;
