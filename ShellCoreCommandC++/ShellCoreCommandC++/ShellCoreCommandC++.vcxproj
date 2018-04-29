@@ -40,8 +40,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\include;%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\lib\x86;%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2-2.0.8\include;$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2_image-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2_image-2.0.3\lib\x86;$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
     <EnableCppCoreCheck>true</EnableCppCoreCheck>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -52,11 +52,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\include;%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2_image-2.0.3\include;$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2-2.0.8\include</AdditionalIncludeDirectories>
+      <SDLCheck>
+      </SDLCheck>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\lib\x86;%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2-2.0.8\lib\x86;$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2_image-2.0.3\lib\x86</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -176,6 +178,22 @@
     <Image Include="assets\images\TurretMissile.png" />
     <Image Include="assets\images\TurretSiege.png" />
     <Image Include="assets\images\TurretSpawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\libjpeg-9.dll" />
+    <None Include="Debug\libpng16-16.dll" />
+    <None Include="Debug\libtiff-5.dll" />
+    <None Include="Debug\libwebp-7.dll" />
+    <None Include="Debug\SDL2.dll" />
+    <None Include="libpng16-16.dll" />
+    <None Include="Release\libjpeg-9.dll" />
+    <None Include="Release\libpng16-16.dll" />
+    <None Include="Release\libtiff-5.dll" />
+    <None Include="Release\libwebp-7.dll" />
+    <None Include="Release\SDL2.dll" />
+    <None Include="SDL2.dll" />
+    <None Include="SDL2_image.dll" />
+    <None Include="zlib1.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

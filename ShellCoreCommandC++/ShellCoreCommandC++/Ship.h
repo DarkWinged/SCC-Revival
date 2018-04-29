@@ -1,9 +1,8 @@
 #pragma once
 
 #include <vector>
+#include <SDL.h>
 #include "ShipPart.h"
-
-#include "Game.h"
 
 class Ship {
 

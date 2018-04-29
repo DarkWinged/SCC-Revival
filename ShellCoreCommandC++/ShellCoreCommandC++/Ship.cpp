@@ -1,7 +1,7 @@
 #include "Ship.h"
 #include "MathLib.h" // Thinking about it more... not sure why i put thi- oh right, derp
 
-Game game;
+//Game game;
 Ship::Ship(SDL_Renderer *rendererArg) {
 	//TODO: Ship Initialization code here (make sure to initialize every single value!).
 	Shell = 750;
