@@ -40,8 +40,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2-2.0.8\include;$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2_image-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2_image-2.0.3\lib\x86;$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2-2.0.8\include;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\ShellCoreCommandC++\ShellCoreCommandC++\inc;$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2_image-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\ShellCoreCommandC++\ShellCoreCommandC++\src;$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2_image-2.0.3\lib\x86;$(HOMEDRIVE)$(HOMEPATH)\source\External-Libs\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
     <EnableCppCoreCheck>true</EnableCppCoreCheck>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -81,25 +81,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\include;%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\include</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%HOMEPATH%\source\repos\SCC-Revival\SDL2_image-2.0.3\include;%HOMEPATH%\source\repos\SCC-Revival\SDL2-2.0.8\include</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Image.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Ship.cpp" />
-    <ClCompile Include="ShipPart.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Image.h" />
-    <ClInclude Include="MathLib.h" />
-    <ClInclude Include="Ship.h" />
-    <ClInclude Include="ShipPart.h" />
-    <ClInclude Include="TextureManager.h" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameObject.cpp" />
+    <ClCompile Include="src\Image.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Ship.cpp" />
+    <ClCompile Include="src\ShipPart.cpp" />
+    <ClCompile Include="src\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\images\BigCenter1.png" />
@@ -194,6 +182,15 @@
     <None Include="SDL2.dll" />
     <None Include="SDL2_image.dll" />
     <None Include="zlib1.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\Game.h" />
+    <ClInclude Include="inc\GameObject.h" />
+    <ClInclude Include="inc\Image.h" />
+    <ClInclude Include="inc\MathLib.h" />
+    <ClInclude Include="inc\Ship.h" />
+    <ClInclude Include="inc\ShipPart.h" />
+    <ClInclude Include="inc\TextureManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
