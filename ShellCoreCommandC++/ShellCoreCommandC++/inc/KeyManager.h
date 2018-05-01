@@ -16,6 +16,8 @@ namespace SCC_R {
 		bool evaluate(SDL_Event event);
 		//gets the state of the key
 		bool getState(char keyID);
+		//overload for numeral keys 0-9
+		bool getState(int keyID);
 		//overload for special key like up, down, left, right arrow keys
 		bool getState(std::string keyID);
 	};

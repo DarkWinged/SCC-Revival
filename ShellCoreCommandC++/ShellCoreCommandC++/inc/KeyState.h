@@ -10,7 +10,7 @@ namespace SCC_R{
 		~KeyState();
 		const SDL_Keycode key;
 		bool evaluate(SDL_Event event);
-		bool pressed();
+		const bool pressed();
 	private:
 		bool state;
 	};

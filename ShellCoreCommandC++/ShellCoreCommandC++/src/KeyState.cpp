@@ -20,7 +20,7 @@ bool KeyState::evaluate(SDL_Event event)
 	return state;
 }
 
-bool KeyState::pressed()
+const bool KeyState::pressed()
 {
 	return state;
 }
