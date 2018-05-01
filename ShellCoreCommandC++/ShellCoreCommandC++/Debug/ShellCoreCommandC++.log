@@ -1,6 +1,3 @@
-﻿  Game.cpp
-  KeyManager.cpp
-  KeyState.cpp
-  main.cpp
-  Generating Code...
-  ShellCoreCommandC++.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe
+﻿  KeyManager.cpp
+  LINK : C:\Users\cesar\Source\Repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe not found or not built by the last incremental link; performing full link
+  ShellCoreCommandC++.vcxproj -> C:\Users\cesar\Source\Repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe

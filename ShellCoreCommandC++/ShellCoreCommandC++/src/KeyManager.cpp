@@ -67,7 +67,7 @@ namespace SCC_R {
 		do {
 			index++;
 			result = keys[index]->evaluate(event);
-		} while (index < keys.size() && !result);
+		} while (index < keys.size() - 1 && !result);
 
 		return result;
 	}

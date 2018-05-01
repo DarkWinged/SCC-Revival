@@ -50,12 +50,13 @@ void Ship::Update() {
 	// Update Rotation
 	if (TargetRotation != Rotation && (xTarPos != 0 || yTarPos != 0)) {
 		// Acceleration is Rotation Speed
-		if (SDL_abs(Rotation - TargetRotation) < Acceleration * 10)
+
+		int shortest_angle = ((((TargetRotation - Rotation) % 360) + 540) % 360) - 180;
+		if (SDL_abs(shortest_angle) < Acceleration * 10)
 		{
 			Rotation = TargetRotation;
 		}
 
-		int shortest_angle = ((((TargetRotation - Rotation) % 360) + 540) % 360) - 180;
 		if(shortest_angle > 0)
 		{
 			Rotation += Acceleration * 10;
