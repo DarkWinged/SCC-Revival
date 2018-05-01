@@ -1,8 +1,8 @@
-#include <Game.h>
-#include <TextureManager.h>
-#include <GameObject.h>
+#include "Game.h"
+#include "TextureManager.h"
+#include "GameObject.h"
 
-#include <Ship.h>
+#include "Ship.h"
 
 Game::Game()
 {}
@@ -13,19 +13,19 @@ Game::~Game()
 
 public:
 
-	Image2D(SDL_Surface *surf, SDL_Renderer *renderer)
-	{
-		 SDL_Texture *tempTex = SDL_CreateTextureFromSurface(renderer, surf);
-		 //rectSize = new SDL_Rect();
+Image2D(SDL_Surface *surf, SDL_Renderer *renderer)
+{
+SDL_Texture *tempTex = SDL_CreateTextureFromSurface(renderer, surf);
+//rectSize = new SDL_Rect();
 
-		 rectSize.w = surf->w;
-		 rectSize.h = surf->h;
+rectSize.w = surf->w;
+rectSize.h = surf->h;
 
-		 SDL_FreeSurface(surf);
-	};
+SDL_FreeSurface(surf);
+};
 
-	SDL_Rect srcR, rectSize;
-	SDL_Texture *texture;
+SDL_Rect srcR, rectSize;
+SDL_Texture *texture;
 
 };*/
 
@@ -39,35 +39,44 @@ public:
 
 Ship *playerShip;
 
+// Key input
+int movingHorizontally = 0;
+int movingVertically = 0;
+
+bool pressingW = false;
+bool pressingA = false;
+bool pressingS = false;
+bool pressingD = false;
+
 void Game::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
 	//cnt = 0;
 
 	int flags = 0;
-	if(fullscreen)
+	if (fullscreen)
 	{
 		flags = SDL_WINDOW_FULLSCREEN;
 	}
-	if(SDL_Init(SDL_INIT_EVERYTHING) == 0)
+	if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
 	{
 		printf("Subsystems initialized!! :) \n");
 
 		window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
-		if(window)
+		if (window)
 		{
 			printf("Window successfully created!! :D \n");
 		}
 
 		renderer = SDL_CreateRenderer(window, -1, 0);
-		if(renderer)
+		if (renderer)
 		{
 			SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-			printf("Renderer successfully created!! 8D \n");
+			printf("Renderer successfully created!! >:D \n");
 		}
 
 		isRunning = true;
-	} 
-	else 
+	}
+	else
 	{
 		isRunning = false;
 	}
@@ -87,66 +96,159 @@ void Game::handleEvents()
 {
 	SDL_Event sdlevent;
 	SDL_PollEvent(&sdlevent);
-	switch( sdlevent.type ){
-            /* Look for a keypress */
-		case SDL_KEYDOWN:
-                /* Check the SDLKey values and move change the coords */
-            switch(sdlevent.key.keysym.sym)
-			{
-				case SDLK_LEFT:
-					playerShip->xVel = -1;
-					playerShip->xTarPos = -1;
-					break;
-				case SDLK_RIGHT:
-					playerShip->xVel = 1;
-					playerShip->xTarPos = 1;
-					break;
-				case SDLK_UP:
-					playerShip->yVel = -1;
-					playerShip->yTarPos = -1;
-					break;
-				case SDLK_DOWN:
-					playerShip->yVel = 1;
-					playerShip->yTarPos = 1;
-					break;
-				default:
-					break;
-            }
+	switch (sdlevent.type) {
+		/* Look for a keypress */
+	case SDL_KEYDOWN:
+		/* Check the SDLKey values and move change the coords */
+		switch (sdlevent.key.keysym.sym)
+		{
+		case SDLK_LEFT:
+			//playerShip->xVel = -1;
+			//playerShip->xVel--;
+			//playerShip->xTarPos = -1;
+
+			movingHorizontally = -1;
+			pressingA = true;
 			break;
-        case SDL_KEYUP:
-			switch(sdlevent.key.keysym.sym)
-			{
-				case SDLK_LEFT:
-					playerShip->xVel = 0;
-					playerShip->xTarPos = 0;
-					break;
-				case SDLK_RIGHT:
-					playerShip->xVel = 0;
-					playerShip->xTarPos = 0;
-					break;
-				case SDLK_UP:
-					playerShip->yVel = 0;
-					playerShip->yTarPos = 0;
-					break;
-				case SDLK_DOWN:
-					playerShip->yVel = 0;
-					playerShip->yTarPos = 0;
-					break;
-				default:
-					break;
-			}
+		case SDLK_RIGHT:
+			//playerShip->xVel = 1;
+			//playerShip->xVel++;
+			//playerShip->xTarPos = 1;
+
+			movingHorizontally = 1;
+			pressingD = true;
 			break;
-		case SDL_QUIT:
-			isRunning = false;
+		case SDLK_UP:
+			//playerShip->yVel = -1;
+			//playerShip->yVel--;
+			//playerShip->yTarPos = -1;
+
+			movingVertically = -1;
+			pressingW = true;
+			break;
+		case SDLK_DOWN:
+			//playerShip->yVel = 1;
+			//playerShip->yVel++;
+			//playerShip->yTarPos = 1;
+
+			movingVertically = 1;
+			pressingS = true;
 			break;
 		default:
 			break;
+		}
+		break;
+	case SDL_KEYUP:
+		switch (sdlevent.key.keysym.sym)
+		{
+		case SDLK_LEFT:
+			pressingA = false;
+			//playerShip->xVel = 0;
+			//playerShip->xTarPos = 0;
+
+			if (pressingA == false & pressingD == false) movingHorizontally = 0;
+			break;
+		case SDLK_RIGHT:
+			pressingD = false;
+			//playerShip->xVel = 0;
+			//playerShip->xTarPos = 0;
+
+			if (pressingA == false & pressingD == false) movingHorizontally = 0;
+			break;
+		case SDLK_UP:
+			pressingW = false;
+			//playerShip->yVel = 0;
+			//playerShip->yTarPos = 0;
+
+			if (pressingW == false & pressingS == false) movingVertically = 0;
+			break;
+		case SDLK_DOWN:
+			pressingS = false;
+			//playerShip->yVel = 0;
+			//playerShip->yTarPos = 0;
+
+			if (pressingW == false & pressingS == false) movingVertically = 0;
+			break;
+		default:
+			break;
+		}
+		break;
+	case SDL_QUIT:
+		isRunning = false;
+		break;
+	default:
+		break;
 	}
 }
 
-int rot = 0;
 void Game::update()
 {
+	if (movingVertically != 0)
+	{
+		if ((playerShip->yVel < playerShip->Speed * movingVertically)
+			| (playerShip->yVel > playerShip->Speed * movingVertically)) // If we're still below the ship's Speed, 
+		{
+			// Increase the ship's velocity by the acceleration.
+			playerShip->yVel += movingVertically * playerShip->Acceleration;
+
+			// If the velocity goes through the ship's Speed after we've increased the velocity by acceleration
+			if (SDL_abs(playerShip->yVel) > playerShip->Speed)
+			{
+				// then divide the actual velocity by the ship's Speed
+				playerShip->yVel /= (SDL_abs(playerShip->yVel) / playerShip->Speed);
+			}
+		}
+		playerShip->yTarPos = movingVertically;
+	}
+	else
+	{
+		// If we're not moving vertically, apply friction (friction is also acceleration too?)
+
+		// If the velocity is smaller than the friction, set velocity to zero.
+		if (SDL_abs(playerShip->yVel) < playerShip->Acceleration)
+		{
+			playerShip->yVel = 0;
+		}
+
+		if (playerShip->yVel > 0) { playerShip->yVel -= playerShip->Acceleration; }
+		if (playerShip->yVel < 0) { playerShip->yVel += playerShip->Acceleration; }
+
+		playerShip->yTarPos = 0; // also set this to 0
+	}
+
+	if (movingHorizontally != 0)
+	{
+		if ((playerShip->xVel < playerShip->Speed * movingHorizontally)
+			| (playerShip->xVel > playerShip->Speed * movingHorizontally)) // If we're still below the ship's Speed, 
+		{
+			// Increase the ship's velocity by the acceleration.
+			playerShip->xVel += movingHorizontally * playerShip->Acceleration;
+
+			// If the velocity goes through the ship's Speed after we've increased the velocity by acceleration
+			if (SDL_abs(playerShip->xVel) > playerShip->Speed)
+			{
+				// then divide the actual velocity by the ship's Speed
+				playerShip->xVel /= (SDL_abs(playerShip->xVel) / playerShip->Speed);
+			}
+		}
+		playerShip->xTarPos = movingHorizontally;
+	}
+	else
+	{
+		// If we're not moving horizontally, apply friction (friction is also acceleration too?)
+
+		// If the velocity is smaller than the friction, set velocity to zero.
+		if (SDL_abs(playerShip->xVel) < playerShip->Acceleration)
+		{
+			playerShip->xVel = 0;
+		}
+
+		if (playerShip->xVel > 0) { playerShip->xVel -= playerShip->Acceleration; }
+		if (playerShip->xVel < 0) { playerShip->xVel += playerShip->Acceleration; }
+
+		playerShip->xTarPos = 0; // also set this to 0
+	}
+
 	//cnt++;
 
 	//destR.x++;
@@ -162,7 +264,7 @@ void Game::update()
 void Game::render()
 {
 	SDL_RenderClear(renderer);
-	
+
 	//SDL_RenderCopyEx(renderer, coreTex->objTexture, NULL, &coreTex->destRect, coreTex->rotation, NULL, SDL_RendererFlip::SDL_FLIP_NONE);
 	//coreTex->Render();
 	playerShip->Render();

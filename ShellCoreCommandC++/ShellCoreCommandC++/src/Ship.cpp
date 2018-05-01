@@ -25,8 +25,8 @@ Ship::Ship(SDL_Renderer *rendererArg) {
 	xVel = 0;
 	yVel = 0;
 
-	Speed = 30;
-	Acceleration = 5;
+	Speed = 20;
+	Acceleration = 1;
 
 	Rotation = 0;
 	TargetRotation = 0;
@@ -50,7 +50,7 @@ void Ship::Update() {
 	// Update Rotation
 	if (TargetRotation != Rotation && (xTarPos != 0 || yTarPos != 0)) {
 		// Acceleration is Rotation Speed
-		if (SDL_abs(Rotation - TargetRotation) < Acceleration)
+		if (SDL_abs(Rotation - TargetRotation) < Acceleration * 10)
 		{
 			Rotation = TargetRotation;
 		}
@@ -58,11 +58,11 @@ void Ship::Update() {
 		int shortest_angle = ((((TargetRotation - Rotation) % 360) + 540) % 360) - 180;
 		if(shortest_angle > 0)
 		{
-			Rotation += Acceleration;
+			Rotation += Acceleration * 10;
 		}
 		if (shortest_angle < 0)
 		{
-			Rotation -= Acceleration;
+			Rotation -= Acceleration * 10;
 		}
 	}
 	//3.141592653589793238463
