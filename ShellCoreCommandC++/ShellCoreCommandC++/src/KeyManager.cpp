@@ -4,10 +4,10 @@ namespace SCC_R {
 
 	KeyManager::KeyManager()
 	{
-		//allows std to be used for the rest of the scope
+		//allows std to be used for the rest of the KeyManager::KeyManager() scope
 		using namespace std;
 
-		//shared_ptr is a pointer wrapper class that handles object deletion
+		//shared_ptr is a pointer wrapper class that helps with object clean up http://en.cppreference.com/w/cpp/memory/shared_ptr
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_0)));
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_1)));
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_2)));
@@ -52,7 +52,6 @@ namespace SCC_R {
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_RIGHT)));
 	}
 
-
 	KeyManager::~KeyManager()
 	{
 		//calls vector destructor
@@ -67,10 +66,11 @@ namespace SCC_R {
 		do {
 			index++;
 			result = keys[index]->evaluate(event);
-		} while (index < keys.size() && !result);
+		} while (index < keys.size()-1 && !result);
 
 		return result;
 	}
+
 	bool KeyManager::getState(char keyID)
 	{
 		bool result = false;
@@ -79,6 +79,7 @@ namespace SCC_R {
 		
 		return result;
 	}
+
 	bool KeyManager::getState(int keyID)
 	{
 		bool result = false;
@@ -87,6 +88,7 @@ namespace SCC_R {
 
 		return result;
 	}
+
 	bool KeyManager::getState(ID keyID)
 	{
 		bool result = false;

@@ -99,10 +99,10 @@ void Game::handleEvents()
 	//key_manager usage example
 	if (sdlevent.type == SDL_KEYUP || sdlevent.type == SDL_KEYDOWN){
 		key_manager.evaluate(sdlevent);
-		if (key_manager.getState('a'))
-			std::cout << "a key pressed\n";
-		else
-			std::cout << "a key not pressed\n";
+		//if (key_manager.getState('a'))
+		//	std::cout << "a key pressed\n";
+		//else
+		//	std::cout << "a key not pressed\n";
 	}
 
 	switch (sdlevent.type) {
@@ -192,6 +192,53 @@ void Game::handleEvents()
 
 void Game::update()
 {
+	if (key_manager.getState('a')) {
+		playerShip->xVel -= playerShip->Acceleration;
+
+		if (SDL_abs(playerShip->xVel) > playerShip->Speed)
+		{
+			// then divide the actual velocity by the ship's Speed
+			playerShip->xVel /= (SDL_abs(playerShip->xVel) / playerShip->Speed);
+		}
+		playerShip->xTarPos = -1;
+	}
+
+	if (key_manager.getState('d')) {
+		playerShip->xVel += playerShip->Acceleration;
+
+		if (SDL_abs(playerShip->xVel) > playerShip->Speed)
+		{
+			// then divide the actual velocity by the ship's Speed
+			playerShip->xVel /= (SDL_abs(playerShip->xVel) / playerShip->Speed);
+		}
+		playerShip->xTarPos = 1;
+	}
+	if (key_manager.getState('w')){
+		playerShip->yVel -= playerShip->Acceleration;
+
+		if (SDL_abs(playerShip->yVel) > playerShip->Speed)
+		{
+			// then divide the actual velocity by the ship's Speed
+			playerShip->yVel /= (SDL_abs(playerShip->yVel) / playerShip->Speed);
+		}
+		playerShip->yTarPos = -1;
+	}
+	if (key_manager.getState('s')){
+		playerShip->yVel += playerShip->Acceleration;
+
+		if (SDL_abs(playerShip->yVel) > playerShip->Speed)
+		{
+			// then divide the actual velocity by the ship's Speed
+			playerShip->yVel /= (SDL_abs(playerShip->yVel) / playerShip->Speed);
+		}
+		playerShip->yTarPos = 1;
+	}
+
+	if (playerShip->yVel != 0)
+		playerShip->yVel = playerShip->yVel*.9;
+	if (playerShip->xVel != 0)
+		playerShip->xVel = playerShip->xVel*.9;
+	/*
 	if (movingVertically != 0)
 	{
 		if ((playerShip->yVel < playerShip->Speed * movingVertically)
@@ -257,7 +304,7 @@ void Game::update()
 
 		playerShip->xTarPos = 0; // also set this to 0
 	}
-
+	*/
 	//cnt++;
 
 	//destR.x++;

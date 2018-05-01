@@ -1,6 +1,5 @@
-﻿  Game.cpp
-  KeyManager.cpp
-  KeyState.cpp
-  main.cpp
-  Generating Code...
-  ShellCoreCommandC++.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe
+﻿  Ship.cpp
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(53): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(58): error C2296: '%': illegal, left operand has type 'double'
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(86): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(96): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
