@@ -50,7 +50,7 @@ Ship::Ship(SDL_Renderer *rendererArg) {
 }
 
 Ship::~Ship() {
-
+	Parts.~vector();
 }
 
 void Ship::Update() {
