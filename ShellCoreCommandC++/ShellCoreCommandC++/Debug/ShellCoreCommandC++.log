@@ -1,5 +1,5 @@
 ﻿  Ship.cpp
-c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(53): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(58): error C2296: '%': illegal, left operand has type 'double'
-c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(86): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(96): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\cesar\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(98): warning C4482: nonstandard extension used: enum 'SDL_RendererFlip' used in qualified name
+c:\users\cesar\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(98): warning C4482: nonstandard extension used: enum 'SDL_RendererFlip' used in qualified name
+  LINK : C:\Users\cesar\Source\Repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe not found or not built by the last incremental link; performing full link
+  ShellCoreCommandC++.vcxproj -> C:\Users\cesar\Source\Repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe

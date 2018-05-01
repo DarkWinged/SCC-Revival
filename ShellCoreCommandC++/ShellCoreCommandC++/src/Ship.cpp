@@ -57,11 +57,11 @@ void Ship::Update() {
 			Rotation = TargetRotation;
 		}
 
-		if(shortest_angle > 0)
+		if(shortest_angle > 0 && Rotation != TargetRotation)
 		{
 			Rotation += Acceleration * 10;
 		}
-		if (shortest_angle < 0)
+		if (shortest_angle < 0 && Rotation != TargetRotation)
 		{
 			Rotation -= Acceleration * 10;
 		}

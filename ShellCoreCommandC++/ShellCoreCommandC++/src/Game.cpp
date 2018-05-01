@@ -96,6 +96,8 @@ void Game::handleEvents()
 	SDL_Event sdlevent;
 	SDL_PollEvent(&sdlevent);
 
+	if (sdlevent.type == SDL_QUIT) isRunning = false;
+
 	//key_manager usage example
 	if (sdlevent.type == SDL_KEYUP || sdlevent.type == SDL_KEYDOWN){
 		key_manager.evaluate(sdlevent);
@@ -105,10 +107,12 @@ void Game::handleEvents()
 		//	std::cout << "a key not pressed\n";
 	}
 
-	switch (sdlevent.type) {
-		/* Look for a keypress */
+	// Delros: we don't need this anymore!! HOORAY FOR KEYMANAGER!!!!!!!!!!!!!!! :D
+	//           v
+	/*switch (sdlevent.type) {
+		// Look for a keypress 
 	case SDL_KEYDOWN:
-		/* Check the SDLKey values and move change the coords */
+		// Check the SDLKey values and move change the coords
 		switch (sdlevent.key.keysym.sym)
 		{
 		case SDLK_LEFT:
@@ -187,12 +191,20 @@ void Game::handleEvents()
 		break;
 	default:
 		break;
-	}
+	}*/
+
+	movingHorizontally = 0;
+	movingVertically = 0;
+
+	if (key_manager.getState('a')) movingHorizontally--;
+	if (key_manager.getState('d')) movingHorizontally++;
+	if (key_manager.getState('w')) movingVertically--;
+	if (key_manager.getState('s')) movingVertically++;
 }
 
 void Game::update()
 {
-	if (key_manager.getState('a')) {
+	/*if (key_manager.getState('a')) {
 		playerShip->xVel -= playerShip->Acceleration;
 
 		if (SDL_abs(playerShip->xVel) > playerShip->Speed)
@@ -238,7 +250,8 @@ void Game::update()
 		playerShip->yVel = playerShip->yVel*.9;
 	if (playerShip->xVel != 0)
 		playerShip->xVel = playerShip->xVel*.9;
-	/*
+		*/
+	
 	if (movingVertically != 0)
 	{
 		if ((playerShip->yVel < playerShip->Speed * movingVertically)
@@ -304,7 +317,7 @@ void Game::update()
 
 		playerShip->xTarPos = 0; // also set this to 0
 	}
-	*/
+	
 	//cnt++;
 
 	//destR.x++;
