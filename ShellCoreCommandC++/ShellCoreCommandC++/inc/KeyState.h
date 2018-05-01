@@ -11,6 +11,8 @@ namespace SCC_R{
 		const SDL_Keycode key;
 		bool evaluate(SDL_Event event);
 		const bool pressed();
+		bool operator==(const SDL_Event &other);
+		bool operator!=(const SDL_Event &other);
 	private:
 		bool state;
 	};

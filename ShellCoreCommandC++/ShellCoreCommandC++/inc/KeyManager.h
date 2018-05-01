@@ -3,7 +3,7 @@
 #include <KeyState.h>
 #include <sdl.h>
 #include <vector>
-#include <string>
+#include <memory>
 
 namespace SCC_R {
 	class KeyManager
@@ -11,7 +11,9 @@ namespace SCC_R {
 	public:
 		KeyManager();
 		~KeyManager();
-		std::vector<KeyState> keys;
+		const enum ID { UP, DOWN, LEFT, RIGHT };
+		//an array of shared_ptrs that hold the address to keystates
+		std::vector<std::shared_ptr<KeyState>> keys;
 		//passes event to the correct key
 		bool evaluate(SDL_Event event);
 		//gets the state of the key
@@ -19,6 +21,6 @@ namespace SCC_R {
 		//overload for numeral keys 0-9
 		bool getState(int keyID);
 		//overload for special key like up, down, left, right arrow keys
-		bool getState(std::string keyID);
+		bool getState(ID keyID);
 	};
 }

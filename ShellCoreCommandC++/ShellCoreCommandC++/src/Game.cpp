@@ -51,7 +51,6 @@ bool pressingD = false;
 void Game::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
 	//cnt = 0;
-
 	int flags = 0;
 	if (fullscreen)
 	{
@@ -96,6 +95,10 @@ void Game::handleEvents()
 {
 	SDL_Event sdlevent;
 	SDL_PollEvent(&sdlevent);
+
+	if (sdlevent.type == SDL_KEYUP || sdlevent.type == SDL_KEYDOWN)
+		this->key_mgr.evaluate(sdlevent);
+	//std::cout << ;
 	switch (sdlevent.type) {
 		/* Look for a keypress */
 	case SDL_KEYDOWN:

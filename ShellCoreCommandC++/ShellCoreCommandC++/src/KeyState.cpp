@@ -4,6 +4,7 @@ namespace SCC_R{
 
 	KeyState::KeyState(SDL_Keycode init_key):key(init_key)
 {
+	state = false;
 }
 
 
@@ -13,16 +14,36 @@ namespace SCC_R{
 
 bool KeyState::evaluate(SDL_Event event)
 {
-	if (event.key.state == SDL_PRESSED)
-		state = true;
+	if (this->operator==(event)) {
+		if (event.key.state == SDL_PRESSED)
+			state = true;
+		else
+			state = false;
+		return true;
+	}
 	else
-		state = false;
-	return state;
+		return false;
 }
 
 const bool KeyState::pressed()
 {
 	return state;
+}
+
+bool KeyState::operator==(const SDL_Event &other)
+{
+	if (key == other.key.keysym.sym)
+		return true;
+	else
+		return false;
+}
+
+bool KeyState::operator!=(const SDL_Event &other)
+{
+	if (key == other.key.keysym.sym)
+		return false;
+	else
+		return true;
 }
 
 }
