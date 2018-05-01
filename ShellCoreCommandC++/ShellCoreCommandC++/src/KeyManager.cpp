@@ -7,7 +7,7 @@ namespace SCC_R {
 		//allows std to be used for the rest of the scope
 		using namespace std;
 
-		//shared_ptr is a pointer wrapper class that handles object deletion
+		//shared_ptr is a pointer wrapper class that helps with object clean up http://en.cppreference.com/w/cpp/memory/shared_ptr
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_0)));
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_1)));
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_2)));
