@@ -1,10 +1,4 @@
-﻿  Game.cpp
-  GameObject.cpp
-  Image.cpp
-  main.cpp
-  Ship.cpp
-  ShipPart.cpp
-  TextureManager.cpp
+﻿  KeyManager.cpp
+  keyState.cpp
   Generating Code...
-  ShellCoreCommandC++.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe
-  ShellCoreCommandC++.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.pdb (Partial -> Full PDB)
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\keystate.cpp(20): error C4716: 'SCC_R::KeyState::evaluate': must return a value
