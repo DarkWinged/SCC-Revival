@@ -1,10 +1,5 @@
-﻿  Game.cpp
-  GameObject.cpp
-  Image.cpp
-  main.cpp
-  Ship.cpp
-  ShipPart.cpp
-  TextureManager.cpp
-  Generating Code...
-  ShellCoreCommandC++.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe
-  ShellCoreCommandC++.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.pdb (Partial -> Full PDB)
+﻿  Ship.cpp
+c:\users\cesar\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(97): warning C4482: nonstandard extension used: enum 'SDL_RendererFlip' used in qualified name
+c:\users\cesar\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(97): warning C4482: nonstandard extension used: enum 'SDL_RendererFlip' used in qualified name
+  LINK : C:\Users\cesar\Source\Repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe not found or not built by the last incremental link; performing full link
+  ShellCoreCommandC++.vcxproj -> C:\Users\cesar\Source\Repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe
