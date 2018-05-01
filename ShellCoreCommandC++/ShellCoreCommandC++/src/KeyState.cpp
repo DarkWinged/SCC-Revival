@@ -15,11 +15,14 @@ namespace SCC_R{
 bool KeyState::evaluate(SDL_Event event)
 {
 	if (this->operator==(event)) {
-		if (event.key.state == SDL_PRESSED)
+		if (event.key.state == SDL_PRESSED) {
 			state = true;
-		else
+			return true;
+		}
+		else {
 			state = false;
-		return true;
+			return true;
+		}
 	}
 	else
 		return false;
@@ -32,10 +35,12 @@ const bool KeyState::pressed()
 
 bool KeyState::operator==(const SDL_Event &other)
 {
-	if (key == other.key.keysym.sym)
+	if (key == other.key.keysym.sym) {
 		return true;
-	else
+	}
+	else {
 		return false;
+	}
 }
 
 bool KeyState::operator!=(const SDL_Event &other)

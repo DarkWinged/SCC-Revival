@@ -4,7 +4,10 @@ namespace SCC_R {
 
 	KeyManager::KeyManager()
 	{
+		//allows std to be used for the rest of the scope
 		using namespace std;
+
+		//shared_ptr is a pointer wrapper class that handles object deletion
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_0)));
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_1)));
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_2)));
@@ -14,6 +17,7 @@ namespace SCC_R {
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_6)));
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_7)));
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_8)));
+		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_9)));
 		
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_a)));
 		keys.push_back(shared_ptr<KeyState>(new KeyState(SDLK_b)));
@@ -51,6 +55,7 @@ namespace SCC_R {
 
 	KeyManager::~KeyManager()
 	{
+		//calls vector destructor
 		keys.~vector();
 	}
 
@@ -58,7 +63,7 @@ namespace SCC_R {
 	{
 		bool result = false;
 		unsigned int index = 0;
-
+		
 		do {
 			index++;
 			result = keys[index]->evaluate(event);
@@ -70,8 +75,8 @@ namespace SCC_R {
 	{
 		bool result = false;
 
-		result = keys[(int)keyID-87]->pressed();
-
+		result = keys[keyID - 87]->pressed();
+		
 		return result;
 	}
 	bool KeyManager::getState(int keyID)
@@ -89,16 +94,16 @@ namespace SCC_R {
 		switch (keyID)
 		{
 		case UP:
-			result = keys[keys.size() - 3]->pressed();
+			result = keys[keys.size() - 4]->pressed();
 			break;
 		case DOWN:
-			result = keys[keys.size() - 2]->pressed();
+			result = keys[keys.size() - 3]->pressed();
 			break;
 		case LEFT:
-			result = keys[keys.size() - 1]->pressed();
+			result = keys[keys.size() - 2]->pressed();
 			break;
 		case RIGHT:
-			result = keys[keys.size()]->pressed();
+			result = keys[keys.size() - 1]->pressed();
 			break;
 		default:
 			result = false;

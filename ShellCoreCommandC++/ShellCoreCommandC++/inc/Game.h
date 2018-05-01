@@ -29,5 +29,5 @@ public:
 	bool isRunning;
 	SDL_Window *window;
 	SDL_Renderer *renderer;
-	SCC_R::KeyManager key_mgr;
+	SCC_R::KeyManager key_manager;
 };

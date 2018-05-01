@@ -96,9 +96,15 @@ void Game::handleEvents()
 	SDL_Event sdlevent;
 	SDL_PollEvent(&sdlevent);
 
-	if (sdlevent.type == SDL_KEYUP || sdlevent.type == SDL_KEYDOWN)
-		this->key_mgr.evaluate(sdlevent);
-	//std::cout << ;
+	//key_manager usage example
+	if (sdlevent.type == SDL_KEYUP || sdlevent.type == SDL_KEYDOWN){
+		key_manager.evaluate(sdlevent);
+		if (key_manager.getState('a'))
+			std::cout << "a key pressed\n";
+		else
+			std::cout << "a key not pressed\n";
+	}
+
 	switch (sdlevent.type) {
 		/* Look for a keypress */
 	case SDL_KEYDOWN:

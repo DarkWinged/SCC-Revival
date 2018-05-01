@@ -1,2 +1,6 @@
-﻿  KeyManager.cpp
+﻿  Game.cpp
+  KeyManager.cpp
+  KeyState.cpp
+  main.cpp
+  Generating Code...
   ShellCoreCommandC++.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe
