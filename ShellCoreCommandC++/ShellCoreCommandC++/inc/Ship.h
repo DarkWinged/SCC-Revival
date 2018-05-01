@@ -30,20 +30,20 @@ public:
 	int MaxEnergy;
 
 	// Shellcore's current position.
-	int xPos;
-	int yPos;
+	double xPos;
+	double yPos;
 
 	// Shellcore's destination position.
-	int xTarPos;
-	int yTarPos;
+	double xTarPos;
+	double yTarPos;
 
 	// Shellcore's velocity.
-	int xVel;
-	int yVel;
+	double xVel;
+	double yVel;
 
 	// Shellcore's speed and acceleration.
-	int Speed;
-	int Acceleration;
+	double Speed;
+	double Acceleration;
 
 	// Shellcore's current rotation.
 	int Rotation;

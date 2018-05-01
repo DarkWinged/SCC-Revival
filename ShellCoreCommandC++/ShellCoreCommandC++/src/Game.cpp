@@ -9,31 +9,6 @@ Game::Game()
 Game::~Game()
 {}
 
-/*class Image2D {
-
-public:
-
-Image2D(SDL_Surface *surf, SDL_Renderer *renderer)
-{
-SDL_Texture *tempTex = SDL_CreateTextureFromSurface(renderer, surf);
-//rectSize = new SDL_Rect();
-
-rectSize.w = surf->w;
-rectSize.h = surf->h;
-
-SDL_FreeSurface(surf);
-};
-
-SDL_Rect srcR, rectSize;
-SDL_Texture *texture;
-
-};*/
-
-//Image2D *coreTex;
-//SDL_Texture *coreTex;
-//SDL_Rect srcR, destR;
-
-
 // The ID 0 would be the player's shellcore
 //GameObject *coreTex;
 
@@ -79,15 +54,9 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	{
 		isRunning = false;
 	}
+	
+	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
-	//SDL_Surface *tmpSurface = IMG_Load("assets/images/SmallCore1.png");
-	//destR.w = tmpSurface->w;
-	//destR.h = tmpSurface->h;
-
-	//coreTex = SDL_CreateTextureFromSurface(renderer, tmpSurface);
-	//SDL_FreeSurface(tmpSurface);
-
-	//coreTex = new GameObject("assets/images/SmallCore1.png", renderer, 100, 50);
 	playerShip = new Ship(renderer);
 }
 
@@ -107,151 +76,17 @@ void Game::handleEvents()
 		//	std::cout << "a key not pressed\n";
 	}
 
-	// Delros: we don't need this anymore!! HOORAY FOR KEYMANAGER!!!!!!!!!!!!!!! :D
-	//           v
-	/*switch (sdlevent.type) {
-		// Look for a keypress 
-	case SDL_KEYDOWN:
-		// Check the SDLKey values and move change the coords
-		switch (sdlevent.key.keysym.sym)
-		{
-		case SDLK_LEFT:
-			//playerShip->xVel = -1;
-			//playerShip->xVel--;
-			//playerShip->xTarPos = -1;
-
-			movingHorizontally = -1;
-			pressingA = true;
-			break;
-		case SDLK_RIGHT:
-			//playerShip->xVel = 1;
-			//playerShip->xVel++;
-			//playerShip->xTarPos = 1;
-
-			movingHorizontally = 1;
-			pressingD = true;
-			break;
-		case SDLK_UP:
-			//playerShip->yVel = -1;
-			//playerShip->yVel--;
-			//playerShip->yTarPos = -1;
-
-			movingVertically = -1;
-			pressingW = true;
-			break;
-		case SDLK_DOWN:
-			//playerShip->yVel = 1;
-			//playerShip->yVel++;
-			//playerShip->yTarPos = 1;
-
-			movingVertically = 1;
-			pressingS = true;
-			break;
-		default:
-			break;
-		}
-		break;
-	case SDL_KEYUP:
-		switch (sdlevent.key.keysym.sym)
-		{
-		case SDLK_LEFT:
-			pressingA = false;
-			//playerShip->xVel = 0;
-			//playerShip->xTarPos = 0;
-
-			if (pressingA == false && pressingD == false) movingHorizontally = 0;
-			break;
-		case SDLK_RIGHT:
-			pressingD = false;
-			//playerShip->xVel = 0;
-			//playerShip->xTarPos = 0;
-
-			if (pressingA == false && pressingD == false) movingHorizontally = 0;
-			break;
-		case SDLK_UP:
-			pressingW = false;
-			//playerShip->yVel = 0;
-			//playerShip->yTarPos = 0;
-
-			if (pressingW == false && pressingS == false) movingVertically = 0;
-			break;
-		case SDLK_DOWN:
-			pressingS = false;
-			//playerShip->yVel = 0;
-			//playerShip->yTarPos = 0;
-
-			if (pressingW == false && pressingS == false) movingVertically = 0;
-			break;
-		default:
-			break;
-		}
-		break;
-	case SDL_QUIT:
-		isRunning = false;
-		break;
-	default:
-		break;
-	}*/
-
 	movingHorizontally = 0;
 	movingVertically = 0;
-
-	if (key_manager.getState('a')) movingHorizontally--;
-	if (key_manager.getState('d')) movingHorizontally++;
-	if (key_manager.getState('w')) movingVertically--;
-	if (key_manager.getState('s')) movingVertically++;
+	
+	if (key_manager.getState('a') || key_manager.getState(key_manager.LEFT)) movingHorizontally--;
+	if (key_manager.getState('d') || key_manager.getState(key_manager.RIGHT)) movingHorizontally++;
+	if (key_manager.getState('w') || key_manager.getState(key_manager.UP)) movingVertically--;
+	if (key_manager.getState('s') || key_manager.getState(key_manager.DOWN)) movingVertically++;
 }
 
 void Game::update()
 {
-	/*if (key_manager.getState('a')) {
-		playerShip->xVel -= playerShip->Acceleration;
-
-		if (SDL_abs(playerShip->xVel) > playerShip->Speed)
-		{
-			// then divide the actual velocity by the ship's Speed
-			playerShip->xVel /= (SDL_abs(playerShip->xVel) / playerShip->Speed);
-		}
-		playerShip->xTarPos = -1;
-	}
-
-	if (key_manager.getState('d')) {
-		playerShip->xVel += playerShip->Acceleration;
-
-		if (SDL_abs(playerShip->xVel) > playerShip->Speed)
-		{
-			// then divide the actual velocity by the ship's Speed
-			playerShip->xVel /= (SDL_abs(playerShip->xVel) / playerShip->Speed);
-		}
-		playerShip->xTarPos = 1;
-	}
-	if (key_manager.getState('w')){
-		playerShip->yVel -= playerShip->Acceleration;
-
-		if (SDL_abs(playerShip->yVel) > playerShip->Speed)
-		{
-			// then divide the actual velocity by the ship's Speed
-			playerShip->yVel /= (SDL_abs(playerShip->yVel) / playerShip->Speed);
-		}
-		playerShip->yTarPos = -1;
-	}
-	if (key_manager.getState('s')){
-		playerShip->yVel += playerShip->Acceleration;
-
-		if (SDL_abs(playerShip->yVel) > playerShip->Speed)
-		{
-			// then divide the actual velocity by the ship's Speed
-			playerShip->yVel /= (SDL_abs(playerShip->yVel) / playerShip->Speed);
-		}
-		playerShip->yTarPos = 1;
-	}
-
-	if (playerShip->yVel != 0)
-		playerShip->yVel = playerShip->yVel*.9;
-	if (playerShip->xVel != 0)
-		playerShip->xVel = playerShip->xVel*.9;
-		*/
-	
 	if (movingVertically != 0)
 	{
 		if ((playerShip->yVel < playerShip->Speed * movingVertically)
@@ -318,24 +153,14 @@ void Game::update()
 		playerShip->xTarPos = 0; // also set this to 0
 	}
 	
-	//cnt++;
-
-	//destR.x++;
-	//destR.y++;
-
-	//coreTex->rotation++;
-	//coreTex->Update();
 	playerShip->Update();
-
-	//printf("%d\n", cnt);
+	//printf("%d\n", cnt); i'll leave this here
 }
 
 void Game::render()
 {
 	SDL_RenderClear(renderer);
-
-	//SDL_RenderCopyEx(renderer, coreTex->objTexture, NULL, &coreTex->destRect, coreTex->rotation, NULL, SDL_RendererFlip::SDL_FLIP_NONE);
-	//coreTex->Render();
+	
 	playerShip->Render();
 
 	SDL_RenderPresent(renderer);
