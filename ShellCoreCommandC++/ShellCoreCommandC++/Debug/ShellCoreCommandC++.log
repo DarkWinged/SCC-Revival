@@ -1,4 +1,2 @@
-﻿  KeyManager.cpp
-  keyState.cpp
-  Generating Code...
-c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\keystate.cpp(20): error C4716: 'SCC_R::KeyState::evaluate': must return a value
+﻿  KeyState.cpp
+  ShellCoreCommandC++.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe

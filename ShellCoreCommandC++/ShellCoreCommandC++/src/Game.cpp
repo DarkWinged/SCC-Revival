@@ -146,28 +146,28 @@ void Game::handleEvents()
 			//playerShip->xVel = 0;
 			//playerShip->xTarPos = 0;
 
-			if (pressingA == false & pressingD == false) movingHorizontally = 0;
+			if (pressingA == false && pressingD == false) movingHorizontally = 0;
 			break;
 		case SDLK_RIGHT:
 			pressingD = false;
 			//playerShip->xVel = 0;
 			//playerShip->xTarPos = 0;
 
-			if (pressingA == false & pressingD == false) movingHorizontally = 0;
+			if (pressingA == false && pressingD == false) movingHorizontally = 0;
 			break;
 		case SDLK_UP:
 			pressingW = false;
 			//playerShip->yVel = 0;
 			//playerShip->yTarPos = 0;
 
-			if (pressingW == false & pressingS == false) movingVertically = 0;
+			if (pressingW == false && pressingS == false) movingVertically = 0;
 			break;
 		case SDLK_DOWN:
 			pressingS = false;
 			//playerShip->yVel = 0;
 			//playerShip->yTarPos = 0;
 
-			if (pressingW == false & pressingS == false) movingVertically = 0;
+			if (pressingW == false && pressingS == false) movingVertically = 0;
 			break;
 		default:
 			break;

@@ -17,6 +17,7 @@ bool KeyState::evaluate(SDL_Event event)
 		state = true;
 	else
 		state = false;
+	return state;
 }
 
 bool KeyState::pressed()
