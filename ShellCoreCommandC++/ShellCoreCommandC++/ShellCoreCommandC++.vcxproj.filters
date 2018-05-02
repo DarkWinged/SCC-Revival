@@ -42,6 +42,12 @@
     <ClCompile Include="src\TextureManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\KeyState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KeyManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\images\BigCenter1.png">
@@ -283,9 +289,6 @@
     <None Include="Release\libpng16-16.dll">
       <Filter>Resource Files\Libs</Filter>
     </None>
-    <None Include="libpng16-16.dll">
-      <Filter>Resource Files\Libs</Filter>
-    </None>
     <None Include="Debug\libpng16-16.dll">
       <Filter>Resource Files\Libs</Filter>
     </None>
@@ -304,9 +307,6 @@
     <None Include="Debug\SDL2.dll">
       <Filter>Resource Files\Libs</Filter>
     </None>
-    <None Include="SDL2.dll">
-      <Filter>Resource Files\Libs</Filter>
-    </None>
     <None Include="Release\SDL2.dll">
       <Filter>Resource Files\Libs</Filter>
     </None>
@@ -316,6 +316,11 @@
     <None Include="zlib1.dll">
       <Filter>Resource Files\Libs</Filter>
     </None>
+    <None Include="libjpeg-9.dll" />
+    <None Include="libtiff-5.dll" />
+    <None Include="libwebp-7.dll" />
+    <None Include="SDL2.dll" />
+    <None Include="libpng16-16.dll" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Game.h">
@@ -337,6 +342,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inc\TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\KeyState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\KeyManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

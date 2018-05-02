@@ -81,6 +81,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\KeyManager.cpp" />
+    <ClCompile Include="src\KeyState.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\Image.cpp" />
@@ -173,7 +175,10 @@
     <None Include="Debug\libtiff-5.dll" />
     <None Include="Debug\libwebp-7.dll" />
     <None Include="Debug\SDL2.dll" />
+    <None Include="libjpeg-9.dll" />
     <None Include="libpng16-16.dll" />
+    <None Include="libtiff-5.dll" />
+    <None Include="libwebp-7.dll" />
     <None Include="Release\libjpeg-9.dll" />
     <None Include="Release\libpng16-16.dll" />
     <None Include="Release\libtiff-5.dll" />
@@ -191,6 +196,8 @@
     <ClInclude Include="inc\Ship.h" />
     <ClInclude Include="inc\ShipPart.h" />
     <ClInclude Include="inc\TextureManager.h" />
+    <ClInclude Include="inc\KeyState.h" />
+    <ClInclude Include="inc\KeyManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
