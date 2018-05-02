@@ -25,8 +25,9 @@ Ship::Ship(SDL_Renderer *rendererArg) {
 	xVel = 0;
 	yVel = 0;
 
-	Speed = 30;
-	Acceleration = 5;
+	Speed = 5;
+	Acceleration = .1;
+	Manuverability = .5;
 
 	Rotation = 0;
 	TargetRotation = 0;
@@ -34,6 +35,12 @@ Ship::Ship(SDL_Renderer *rendererArg) {
 	Parts = std::vector<ShipPart>();
 
 	renderer = rendererArg;
+
+	ShipPart *Part3 = new ShipPart(-17, 2, 0, false, new Image("assets/images/SmallSide1.png", renderer));
+	Parts.push_back(*Part3); // Add the part to the part list.
+
+	ShipPart *Part2 = new ShipPart(17, 2, 0, true, new Image("assets/images/SmallSide1.png", renderer));
+	Parts.push_back(*Part2); // Add the part to the part list.
 
 	ShipPart *Part1 = new ShipPart(0, -17, 0, true, new Image("assets/images/SmallCenter5.png", renderer));
 	Parts.push_back(*Part1); // Add the part to the part list.
@@ -43,33 +50,34 @@ Ship::Ship(SDL_Renderer *rendererArg) {
 }
 
 Ship::~Ship() {
-
+	Parts.~vector();
 }
 
 void Ship::Update() {
 	// Update Rotation
 	if (TargetRotation != Rotation && (xTarPos != 0 || yTarPos != 0)) {
 		// Acceleration is Rotation Speed
-		if (SDL_abs(Rotation - TargetRotation) < Acceleration)
+
+		int shortest_angle = ((((TargetRotation - Rotation) % 360) + 540) % 360) - 180;
+		if (SDL_abs(shortest_angle) < Acceleration * 10)
 		{
 			Rotation = TargetRotation;
 		}
 
-		int shortest_angle = ((((TargetRotation - Rotation) % 360) + 540) % 360) - 180;
-		if(shortest_angle > 0)
+		if(shortest_angle > 0 && Rotation != TargetRotation)
 		{
-			Rotation += Acceleration;
+			Rotation += Manuverability * 10;
 		}
-		if (shortest_angle < 0)
+		if (shortest_angle < 0 && Rotation != TargetRotation)
 		{
-			Rotation -= Acceleration;
+			Rotation -= Manuverability * 10;
 		}
 	}
-	//3.141592653589793238463
+	//3.141592653589793238463 is PI
 	if (xTarPos != 0 || yTarPos != 0)
 	{
-		int rotPos = (int) (SDL_atan2(yTarPos, xTarPos) * (180.0 / 3.14));
-		SetTargetRotation(MathLib::grid(rotPos+90, 5));
+		int rotPos = SDL_floor(SDL_atan2(yTarPos, xTarPos) * (180.0 / MathLib::PI()));
+		SetTargetRotation(MathLib::grid(rotPos + 90, 5));
 	}
 
 	xPos += xVel;
@@ -83,10 +91,11 @@ void Ship::Render() {
 
 		SDL_Rect *rect = new SDL_Rect();
 
-		double radRot = (SDL_floor(MathLib::grid(Rotation, 5) * 3.14)); // i do not know how to name these variables... so heh :P
+		//SDL_floor(MathLib::grid(Rotation, 5))
+		double radRot = Rotation * MathLib::PI() / 180; // i do not know how to name these variables... so heh :P
 
-		rect->x = int((part.xPos * SDL_cos(radRot / 180)) - (part.yPos * SDL_sin(radRot / 180)) + xPos - (part.partImage->xSize/2));
-		rect->y = int((part.xPos * SDL_sin(radRot / 180)) + (part.yPos * SDL_cos(radRot / 180)) + yPos - (part.partImage->ySize/2));
+		rect->x = int((part.xPos * SDL_cos(radRot)) - (part.yPos * SDL_sin(radRot)) + xPos - (part.partImage->xSize/2));
+		rect->y = int((part.xPos * SDL_sin(radRot)) + (part.yPos * SDL_cos(radRot)) + yPos - (part.partImage->ySize/2));
 
 		rect->h = part.partImage->ySize;
 		rect->w = part.partImage->xSize;
