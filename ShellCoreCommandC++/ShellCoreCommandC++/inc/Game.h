@@ -6,6 +6,8 @@
 #include <SDL_opengl.h>
 #include <SDL_image.h>
 #include <stdio.h>
+#include <iostream>
+#include <KeyManager.h>
 
 class Game {
 
@@ -27,4 +29,5 @@ public:
 	bool isRunning;
 	SDL_Window *window;
 	SDL_Renderer *renderer;
+	SCC_R::KeyManager key_manager;
 };

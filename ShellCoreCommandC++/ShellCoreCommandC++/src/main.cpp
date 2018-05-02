@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 	int frameTime;
 
 	Game *game = new Game();
-
 	// gotta init it first...
 	game->init("Cool Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
 
