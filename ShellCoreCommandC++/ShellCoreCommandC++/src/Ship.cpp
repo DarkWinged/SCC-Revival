@@ -2,7 +2,6 @@
 #include <MathLib.h> // Thinking about it more... not sure why i put thi- oh right, derp
 
 //Game game;
-const double PI = 3.141592653589793238463;
 Ship::Ship(SDL_Renderer *rendererArg) {
 	//TODO: Ship Initialization code here (make sure to initialize every single value!).
 	Shell = 750;
@@ -26,8 +25,9 @@ Ship::Ship(SDL_Renderer *rendererArg) {
 	xVel = 0;
 	yVel = 0;
 
-	Speed = 13;
-	Acceleration = 1;
+	Speed = 5;
+	Acceleration = .1;
+	Manuverability = .5;
 
 	Rotation = 0;
 	TargetRotation = 0;
@@ -66,17 +66,17 @@ void Ship::Update() {
 
 		if(shortest_angle > 0 && Rotation != TargetRotation)
 		{
-			Rotation += Acceleration * 10;
+			Rotation += Manuverability * 10;
 		}
 		if (shortest_angle < 0 && Rotation != TargetRotation)
 		{
-			Rotation -= Acceleration * 10;
+			Rotation -= Manuverability * 10;
 		}
 	}
 	//3.141592653589793238463 is PI
 	if (xTarPos != 0 || yTarPos != 0)
 	{
-		int rotPos = SDL_floor(SDL_atan2(yTarPos, xTarPos) * (180.0 / PI));
+		int rotPos = SDL_floor(SDL_atan2(yTarPos, xTarPos) * (180.0 / MathLib::PI()));
 		SetTargetRotation(MathLib::grid(rotPos + 90, 5));
 	}
 
@@ -92,7 +92,7 @@ void Ship::Render() {
 		SDL_Rect *rect = new SDL_Rect();
 
 		//SDL_floor(MathLib::grid(Rotation, 5))
-		double radRot = Rotation * PI / 180; // i do not know how to name these variables... so heh :P
+		double radRot = Rotation * MathLib::PI() / 180; // i do not know how to name these variables... so heh :P
 
 		rect->x = int((part.xPos * SDL_cos(radRot)) - (part.yPos * SDL_sin(radRot)) + xPos - (part.partImage->xSize/2));
 		rect->y = int((part.xPos * SDL_sin(radRot)) + (part.yPos * SDL_cos(radRot)) + yPos - (part.partImage->ySize/2));

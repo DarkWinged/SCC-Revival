@@ -44,6 +44,7 @@ public:
 	// Shellcore's speed and acceleration.
 	double Speed;
 	double Acceleration;
+	double Manuverability;
 
 	// Shellcore's current rotation.
 	int Rotation;
