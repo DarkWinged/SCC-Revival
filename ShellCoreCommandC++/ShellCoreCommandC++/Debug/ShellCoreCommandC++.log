@@ -1,5 +1,11 @@
-﻿  Ship.cpp
-c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(69): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(73): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\ship.cpp(79): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+﻿  AssetManager.cpp
+  Game.cpp
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\game.cpp(99): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\game.cpp(102): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\game.cpp(112): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\game.cpp(132): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\game.cpp(135): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\levi\source\repos\scc-revival\shellcorecommandc++\shellcorecommandc++\src\game.cpp(145): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  main.cpp
+  Generating Code...
   ShellCoreCommandC++.vcxproj -> C:\Users\Levi\source\repos\SCC-Revival\ShellCoreCommandC++\Debug\ShellCoreCommandC++.exe

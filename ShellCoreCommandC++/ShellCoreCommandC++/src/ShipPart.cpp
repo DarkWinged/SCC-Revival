@@ -1,6 +1,6 @@
 #include <ShipPart.h>
 
-ShipPart::ShipPart(int x, int y, int rot, bool horizontalflip, Image * img)
+ShipPart::ShipPart(int x, int y, int rot, bool horizontalflip, SCC_R::Image * img)
 {
 	xPos = x;
 	yPos = y;

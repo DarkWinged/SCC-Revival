@@ -5,7 +5,7 @@
 class ShipPart {
 
 public:
-	ShipPart(int x, int y, int rot, bool horizontalflip, Image *img);
+	ShipPart(int x, int y, int rot, bool horizontalflip, SCC_R::Image *img);
 	~ShipPart();
 
 	int xPos;
@@ -14,5 +14,5 @@ public:
 	int Rotation;
 	bool HorizontallyFlipped;
 
-	Image *partImage;
+	SCC_R::Image *partImage;
 };

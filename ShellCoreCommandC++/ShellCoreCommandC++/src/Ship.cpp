@@ -36,16 +36,16 @@ Ship::Ship(SDL_Renderer *rendererArg) {
 
 	renderer = rendererArg;
 
-	ShipPart *Part3 = new ShipPart(-17, 2, 0, false, new Image("assets/images/SmallSide1.png", renderer));
+	ShipPart *Part3 = new ShipPart(-17, 2, 0, false, new SCC_R::Image("assets/images/Section-9.png", renderer));
 	Parts.push_back(*Part3); // Add the part to the part list.
 
-	ShipPart *Part2 = new ShipPart(17, 2, 0, true, new Image("assets/images/SmallSide1.png", renderer));
+	ShipPart *Part2 = new ShipPart(17, 2, 0, true, new SCC_R::Image("assets/images/Section-9.png", renderer));
 	Parts.push_back(*Part2); // Add the part to the part list.
 
-	ShipPart *Part1 = new ShipPart(0, -17, 0, true, new Image("assets/images/SmallCenter5.png", renderer));
+	ShipPart *Part1 = new ShipPart(0, -17, 0, true, new SCC_R::Image("assets/images/Section-4.png", renderer));
 	Parts.push_back(*Part1); // Add the part to the part list.
 
-	ShipPart *CorePart = new ShipPart(0, 0, 0, false, new Image("assets/images/SmallCore1.png", renderer));
+	ShipPart *CorePart = new ShipPart(0, 0, 0, false, new SCC_R::Image("assets/images/Core-1.png", renderer));
 	Parts.push_back(*CorePart); // Add the part to the part list.
 }
 

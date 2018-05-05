@@ -56,7 +56,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	}
 	
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
-
+	asset_manager.initalize(renderer,"assets/images/");
 	playerShip = new Ship(renderer);
 }
 

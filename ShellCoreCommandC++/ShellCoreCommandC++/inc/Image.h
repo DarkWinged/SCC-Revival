@@ -2,17 +2,21 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <string>
 
-class Image {
+namespace SCC_R{
+	class Image {
 
-public:
-	Image(const char *textureSheet);
-	Image(const char *textureSheet, SDL_Renderer *ren);
-	~Image();
+	public:
+		Image();
+		Image(const char *textureSheet, SDL_Renderer *ren);
+		bool setImage(std::string textureSheet, SDL_Renderer * ren);
+		~Image();
 
-	SDL_Renderer *renderer;
-	SDL_Texture *image;
+		SDL_Renderer *renderer;
+		SDL_Texture *image;
 
-	int xSize;
-	int ySize;
-};
+		int xSize;
+		int ySize;
+	};
+}
