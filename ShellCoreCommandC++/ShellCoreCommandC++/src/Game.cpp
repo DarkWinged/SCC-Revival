@@ -56,7 +56,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	}
 	
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
-	//i
+	//initalizes asset manager
 	asset_manager.initalize(renderer,"assets/images/");
 	SCC_R::AssetManager* temp_ptr = &asset_manager;
 
