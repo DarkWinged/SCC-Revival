@@ -8,27 +8,33 @@ namespace SCC_R {
 
 	AssetManager::~AssetManager()
 	{
+		cores.~vector();
+		modules.~vector();
+		sections.~vector();
 	}
 
 	void AssetManager::initalize(SDL_Renderer *ren, std::string basePath)
 	{
 		using namespace std;
-		string path = "";
 		bool loop = false;
+		string path = "";
 		int index = 0;
 
 		do{
+			//stes path to next image
 			path = basePath + "Core-" + std::to_string(index);
 			path += ".png";
-			//string result = index.c_str();
 
 			cores.push_back(shared_ptr<Image>(new Image()));
+			//checks if image was loaded sucessfully
 			if (cores[cores.size() - 1]->setImage(path, ren))
 			{
+				//loading was sucessful, loop continues
 				loop = true;
 				index++;
 			}
 			else {
+				//loading failed, removes image & breaks loop
 				cores.erase(cores.end()-1);
 				loop = false;
 			}
@@ -39,9 +45,9 @@ namespace SCC_R {
 		do {
 			path = basePath + "Section-" + std::to_string(index);
 			path += ".png";
-			//string result = index.c_str();
 
 			sections.push_back(shared_ptr<Image>(new Image()));
+
 			if (sections[sections.size() - 1]->setImage(path, ren))
 			{
 				loop = true;
@@ -58,9 +64,9 @@ namespace SCC_R {
 		do {
 			path = basePath + "Module-" + std::to_string(index);
 			path += ".png";
-			//string result = index.c_str();
 
 			modules.push_back(shared_ptr<Image>(new Image()));
+
 			if (modules[modules.size() - 1]->setImage(path, ren))
 			{
 				loop = true;
@@ -73,29 +79,32 @@ namespace SCC_R {
 		} while (loop);
 	}
 
-	std::weak_ptr<Image> AssetManager::getCore(unsigned int index)
+	std::weak_ptr<Image> AssetManager::get(unsigned int index, assetType type)
 	{
-		if (index < cores.size())
-			return cores[index];
-		else
-			return std::shared_ptr<Image>();
-	}
+		switch (type)
+		{
+		case CORE:
+			if (index < cores.size())
+				return cores[index];
+			else
+				return std::shared_ptr<Image>();
+			break;
 
-	std::weak_ptr<Image> AssetManager::getSection(unsigned int index)
-	{
-		if (index < sections.size())
-			return sections[index];
-		else
-			return std::shared_ptr<Image>();
-	}
+		case SECTION:
+			if (index < sections.size())
+				return sections[index];
+			else
+				return std::shared_ptr<Image>();
+			break;
 
-	std::weak_ptr<Image> AssetManager::getModule(unsigned int index)
-	{
-		if (index < modules.size())
-			return modules[index];
-		else
-			return std::shared_ptr<Image>();
+		case MODULE:
+			if (index < modules.size())
+				return modules[index];
+			else
+				return std::shared_ptr<Image>();
+			break;
+		}
+		return std::shared_ptr<Image>();
 	}
-
 
 }

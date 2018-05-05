@@ -56,8 +56,17 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	}
 	
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
+	//i
 	asset_manager.initalize(renderer,"assets/images/");
+	SCC_R::AssetManager* temp_ptr = &asset_manager;
+
 	playerShip = new Ship(renderer);
+
+
+	playerShip->addSection(-17, 2, 0, false, temp_ptr, 9, SCC_R::AssetManager::SECTION);
+	playerShip->addSection(17, 2, 0, true, temp_ptr, 9, SCC_R::AssetManager::SECTION);
+	playerShip->addSection(0, -17, 0, false, temp_ptr, 4, SCC_R::AssetManager::SECTION);
+	playerShip->addSection(0, 0, 0, false, temp_ptr, 2, SCC_R::AssetManager::CORE);
 }
 
 void Game::handleEvents()
@@ -67,13 +76,8 @@ void Game::handleEvents()
 
 	if (sdlevent.type == SDL_QUIT) isRunning = false;
 
-	//key_manager usage example
 	if (sdlevent.type == SDL_KEYUP || sdlevent.type == SDL_KEYDOWN){
 		key_manager.evaluate(sdlevent);
-		//if (key_manager.getState('a'))
-		//	std::cout << "a key pressed\n";
-		//else
-		//	std::cout << "a key not pressed\n";
 	}
 
 	movingHorizontally = 0;

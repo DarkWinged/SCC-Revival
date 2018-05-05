@@ -11,11 +11,12 @@ namespace SCC_R {
 	public:
 		AssetManager();
 		~AssetManager();
+		//loads images asstes into memeory 
 		void initalize(SDL_Renderer *ren, std::string basePath);
+		enum assetType{CORE, SECTION, MODULE};
 
-		std::weak_ptr<Image> getCore(unsigned int index);
-		std::weak_ptr<Image> getSection(unsigned int index);
-		std::weak_ptr<Image> getModule(unsigned int index);
+		//returns specified asset if it exists
+		std::weak_ptr<Image> get(unsigned int index, assetType type);
 
 
 	private:

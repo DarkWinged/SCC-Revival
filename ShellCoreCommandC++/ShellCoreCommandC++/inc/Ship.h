@@ -13,6 +13,8 @@ public:
 	void Update();
 	void Render();
 	void SetTargetRotation(int rot);
+	//adds a section to the ship
+	bool addSection(int x, int y, int rot, bool horizontalflip, SCC_R::AssetManager* assets, unsigned int index, SCC_R::AssetManager::assetType type);
 
 	// Shellcore's current shell, shell regeneration and maximum shell.
 	int Shell;
@@ -58,5 +60,5 @@ public:
 	SDL_Renderer *renderer;
 
 	// Store list of the shellcore's current parts.
-	std::vector<ShipPart> Parts;
+	std::vector<std::shared_ptr<ShipPart>> Parts;
 };

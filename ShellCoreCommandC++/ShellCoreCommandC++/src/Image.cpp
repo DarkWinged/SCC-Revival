@@ -39,6 +39,7 @@ namespace SCC_R {
 		renderer = ren;
 
 		SDL_Surface* tempSurface = IMG_Load(textureSheet.c_str());
+		//checks if image exists
 		if (tempSurface == NULL) {
 			printf("Unable to load image %s! SDL_image Error: %s\n", textureSheet.c_str(), IMG_GetError());
 			return false;

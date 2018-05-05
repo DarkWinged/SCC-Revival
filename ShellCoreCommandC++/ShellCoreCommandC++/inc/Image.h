@@ -10,6 +10,7 @@ namespace SCC_R{
 	public:
 		Image();
 		Image(const char *textureSheet, SDL_Renderer *ren);
+		//loads image asset into memory
 		bool setImage(std::string textureSheet, SDL_Renderer * ren);
 		~Image();
 
