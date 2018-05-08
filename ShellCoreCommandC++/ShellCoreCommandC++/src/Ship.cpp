@@ -32,21 +32,9 @@ Ship::Ship(SDL_Renderer *rendererArg) {
 	Rotation = 0;
 	TargetRotation = 0;
 
-	Parts = std::vector<ShipPart>();
+	Parts = std::vector<std::shared_ptr<ShipPart>>();
 
 	renderer = rendererArg;
-
-	ShipPart *Part3 = new ShipPart(-17, 2, 0, false, new Image("assets/images/SmallSide1.png", renderer));
-	Parts.push_back(*Part3); // Add the part to the part list.
-
-	ShipPart *Part2 = new ShipPart(17, 2, 0, true, new Image("assets/images/SmallSide1.png", renderer));
-	Parts.push_back(*Part2); // Add the part to the part list.
-
-	ShipPart *Part1 = new ShipPart(0, -17, 0, true, new Image("assets/images/SmallCenter5.png", renderer));
-	Parts.push_back(*Part1); // Add the part to the part list.
-
-	ShipPart *CorePart = new ShipPart(0, 0, 0, false, new Image("assets/images/SmallCore1.png", renderer));
-	Parts.push_back(*CorePart); // Add the part to the part list.
 }
 
 Ship::~Ship() {
@@ -87,26 +75,39 @@ void Ship::Update() {
 void Ship::Render() {
 	for (int index = 0, size = Parts.size(); index < size; ++index) {
 		// Iterate through every part in the part list and draw them.
-		ShipPart part = Parts[index];
+		std::weak_ptr<ShipPart> part = Parts[index];
 
 		SDL_Rect *rect = new SDL_Rect();
 
 		//SDL_floor(MathLib::grid(Rotation, 5))
 		double radRot = Rotation * MathLib::PI() / 180; // i do not know how to name these variables... so heh :P
 
-		rect->x = int((part.xPos * SDL_cos(radRot)) - (part.yPos * SDL_sin(radRot)) + xPos - (part.partImage->xSize/2));
-		rect->y = int((part.xPos * SDL_sin(radRot)) + (part.yPos * SDL_cos(radRot)) + yPos - (part.partImage->ySize/2));
+		rect->x = int((part.lock()->xPos * SDL_cos(radRot)) - (part.lock()->yPos * SDL_sin(radRot)) + xPos - (part.lock()->partImage.lock()->xSize/2));
+		rect->y = int((part.lock()->xPos * SDL_sin(radRot)) + (part.lock()->yPos * SDL_cos(radRot)) + yPos - (part.lock()->partImage.lock()->ySize/2));
 
-		rect->h = part.partImage->ySize;
-		rect->w = part.partImage->xSize;
+		rect->h = part.lock()->partImage.lock()->ySize;
+		rect->w = part.lock()->partImage.lock()->xSize;
 		
-		SDL_RenderCopyEx(renderer, part.partImage->image,
+		SDL_RenderCopyEx(renderer, part.lock()->partImage.lock()->image,
 			NULL, rect,
-			MathLib::grid(Rotation + part.Rotation, 5), NULL,
-			(part.HorizontallyFlipped == true? SDL_RendererFlip::SDL_FLIP_HORIZONTAL : SDL_RendererFlip::SDL_FLIP_NONE));
+			MathLib::grid(Rotation + part.lock()->Rotation, 5), NULL,
+			(part.lock()->HorizontallyFlipped == true? SDL_RendererFlip::SDL_FLIP_HORIZONTAL : SDL_RendererFlip::SDL_FLIP_NONE));
 	}
 }
 
 void Ship::SetTargetRotation(int rot) {
 	TargetRotation = rot - MathLib::grid(rot, 360);
+}
+
+bool Ship::addSection(int x, int y, int rot, bool horizontalflip, SCC_R::AssetManager* assets, unsigned int index, SCC_R::AssetManager::assetType type)
+{
+	Parts.push_back(std::shared_ptr<ShipPart>(new ShipPart(x, y, rot, horizontalflip)));
+	//checks if section was sucessfully created
+	if (Parts[Parts.size() - 1]->initialize(assets, index, type))
+		return true;
+	else
+	{
+		Parts.erase(Parts.end() - 1);
+		return false;
+	}
 }

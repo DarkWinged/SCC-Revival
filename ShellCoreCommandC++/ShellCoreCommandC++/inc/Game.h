@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <KeyManager.h>
+#include <AssetManager.h>
+#include <memory>
 
 class Game {
 
@@ -30,4 +32,5 @@ public:
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 	SCC_R::KeyManager key_manager;
+	SCC_R::AssetManager asset_manager;
 };

@@ -19,7 +19,7 @@ GameObject::GameObject(const char *textureSheet, SDL_Renderer *ren, int xpos, in
 	//it's better to do this... (since you know the width and height of a picture)
 	objTexture = tex;*/
 
-	tex = new Image(textureSheet, ren);
+	tex = new SCC_R::Image(textureSheet, ren);
 	srcRect.w = tex->xSize;
 	srcRect.h = tex->ySize;
 

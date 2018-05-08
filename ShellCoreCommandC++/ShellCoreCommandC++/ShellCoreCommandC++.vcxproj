@@ -81,6 +81,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\AssetManager.cpp" />
     <ClCompile Include="src\KeyManager.cpp" />
     <ClCompile Include="src\KeyState.cpp" />
     <ClCompile Include="src\Game.cpp" />
@@ -189,6 +190,7 @@
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\AssetManager.h" />
     <ClInclude Include="inc\Game.h" />
     <ClInclude Include="inc\GameObject.h" />
     <ClInclude Include="inc\Image.h" />

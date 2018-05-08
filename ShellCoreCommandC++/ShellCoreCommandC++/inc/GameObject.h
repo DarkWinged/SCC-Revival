@@ -20,7 +20,7 @@ public:
 	int yVel;
 	int rotation;
 
-	Image *tex;
+	SCC_R::Image *tex;
 	SDL_Rect srcRect, destRect;
 
 	int destinyRot;
