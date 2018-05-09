@@ -31,14 +31,15 @@
 *.out
 *.app
 
-/ShellCoreCommandC++/.vs/ShellCoreCommandC++/v15/Browse.VC.opendb
-/ShellCoreCommandC++/ShellCoreCommandC++.VC.VC.opendb
-/.vs/SCC-Revival/v15/Browse.VC.opendb
-/ShellCoreCommandC++/ShellCoreCommandC++/Debug
-/ShellCoreCommandC++/ShellCoreCommandC++/Debug/ShellCoreCommandC++.log
 /Libs
 /Shellcore-Revival/.vs/Shellcore-Revival/v15
+/Shellcore-Revival/.vs/Shellcore-Revival/v15/.suo
 /Shellcore-Revival/Shellcore-Revival/Debug
-/ShellCoreCommandC++/.vs
-/ShellCoreCommandC++/Debug
-/ShellCoreCommandC++/ShellCoreCommandC++/Debug
+/ShellCoreCommandCpp/.vs/Shellcore-Revival/v15
+/ShellCoreCommandCpp/Debug
+/ShellCoreCommandCpp/ipch/shellcorecommandc++-8d62cf4d
+/ShellCoreCommandCpp/Release
+/ShellCoreCommandCpp/Shellcore-Revival/Release
+/ShellCoreCommandCpp/Shellcore-Revival/Shellcore-Revival.vcxproj
+*.user
+/ShellCoreCommandCpp/Shellcore-Revival/Debug

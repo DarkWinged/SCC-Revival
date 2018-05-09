@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Images">
+      <UniqueIdentifier>{48f7f2e2-f897-49ac-af27-37d3253ace63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Libs">
+      <UniqueIdentifier>{b1712e2c-f4a5-427d-9b48-0a05f5cdcf33}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\images\BigCenter1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigCenter2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigCenter3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigCore1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigSide1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigSide2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigSide3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigSide4.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigSide5.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigSide6.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigWing1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigWing2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigWing3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigWing4.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\BigWing5.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompPassive.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompUtil1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompUtil2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompUtil3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompWeaponB1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompWeaponH1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompWeaponH2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompWeaponM1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompWeaponM2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompWeaponM3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompWeaponS1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompWeaponS2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\CompWeaponS3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumCenter1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumCenter2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumCenter3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumCenter4.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumCenter5.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumCenter6.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumCore2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumExtra1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumExtra2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumSide1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumSide2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumSide3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumSide4.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumWing1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumWing2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MediumWing3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MiniDrone1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MiniDrone2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MiniDrone3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\MiniDrone5.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCenter1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCenter2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCenter3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCenter4.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCenter5.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCenter6.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCenter7.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCenter8.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCenter9.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCore1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallCore2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallSide1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallSide2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallSide3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallSide4.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallWing1.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallWing2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SmallWing3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\SpeederTank.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\Tank2.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\Tank3.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\Tank4.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\TankHerzog.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\TurretDefense.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\TurretHarvester.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\TurretMissile.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\TurretSiege.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+    <Image Include="assets\images\TurretSpawn.png">
+      <Filter>Resource Files\Images</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Release\libjpeg-9.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="Debug\libjpeg-9.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="Release\libpng16-16.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="Debug\libpng16-16.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="Release\libtiff-5.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="Debug\libtiff-5.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="Debug\libwebp-7.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="Release\libwebp-7.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="Debug\SDL2.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="Release\SDL2.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="SDL2_image.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="zlib1.dll">
+      <Filter>Resource Files\Libs</Filter>
+    </None>
+    <None Include="libjpeg-9.dll" />
+    <None Include="libtiff-5.dll" />
+    <None Include="libwebp-7.dll" />
+    <None Include="SDL2.dll" />
+    <None Include="libpng16-16.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Shellcore-Revival\src\AssetManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shellcore-Revival\src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shellcore-Revival\src\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shellcore-Revival\src\Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shellcore-Revival\src\KeyManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shellcore-Revival\src\KeyState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shellcore-Revival\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shellcore-Revival\src\Ship.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shellcore-Revival\src\ShipPart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shellcore-Revival\src\TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Shellcore-Revival\inc\AssetManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shellcore-Revival\inc\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shellcore-Revival\inc\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shellcore-Revival\inc\Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shellcore-Revival\inc\KeyManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shellcore-Revival\inc\KeyState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shellcore-Revival\inc\MathLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shellcore-Revival\inc\Ship.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shellcore-Revival\inc\ShipPart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shellcore-Revival\inc\TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
