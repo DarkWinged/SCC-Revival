@@ -40,8 +40,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(HOMEDRIVE)$(HOMEPATH)\source\Libs\SDL2-2.0.8\include;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\ShellCoreCommandC++\ShellCoreCommandC++\inc;$(HOMEDRIVE)$(HOMEPATH)\source\Libs\SDL2_image-2.0.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\ShellCoreCommandC++\ShellCoreCommandC++\src;$(HOMEDRIVE)$(HOMEPATH)\source\Libs\SDL2_image-2.0.3\lib\x86;$(HOMEDRIVE)$(HOMEPATH)\source\Libs\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\Libs\SDL2-2.0.8\include;$(SolutionDir)ShellCoreCommandC++\inc;$(SolutionDir)..\Libs\SDL2_image-2.0.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)ShellCoreCommandC++\src;$(SolutionDir)..\Libs\SDL2_image-2.0.3\lib\x86;$(SolutionDir)..\Libs\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
     <EnableCppCoreCheck>true</EnableCppCoreCheck>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -52,13 +52,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\Libs\SDL2_image-2.0.3\include;$(HOMEDRIVE)$(HOMEPATH)\source\Libs\SDL2-2.0.8\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\Libs\SDL2_image-2.0.3\include;$(SolutionDir)..\Libs\SDL2-2.0.8\include</AdditionalIncludeDirectories>
       <SDLCheck>
       </SDLCheck>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\Libs\SDL2-2.0.8\lib\x86;$(HOMEDRIVE)$(HOMEPATH)\source\Libs\SDL2_image-2.0.3\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\source\Libs\SDL2-2.0.8\lib\x86;$(SolutionDir)..\Libs\SDL2_image-2.0.3\lib\x86</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
