@@ -32,3 +32,5 @@
 *.app
 /Shellcore-Revival/.vs/Shellcore-Revival/v15
 /Shellcore-Revival/Shellcore-Revival.vcxproj.user
+/Shellcore-Revival/Debug
+/Shellcore-Revival/Shellcore-Revival/Debug

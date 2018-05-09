@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(HOMEDRIVE)$(HOMEPATH)\source\repos\Shellcore-Revival\Shellcore-Revival\inc;$(IncludePath)</IncludePath>
-    <SourcePath>$(HOMEDRIVE)$(HOMEPATH)\source\repos\Shellcore-Revival\Shellcore-Revival\src;$(SourcePath)</SourcePath>
+    <IncludePath>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Shellcore-Revival\Shellcore-Revival\inc;$(IncludePath)</IncludePath>
+    <SourcePath>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Shellcore-Revival\Shellcore-Revival\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -149,10 +149,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="inc\Engine.h" />
+    <ClInclude Include="inc\GUI.h" />
+    <ClInclude Include="inc\Math.h" />
+    <ClInclude Include="inc\Render.h" />
     <ClInclude Include="inc\stdafx.h" />
     <ClInclude Include="inc\targetver.h" />
+    <ClInclude Include="inc\iPhysicsObject.h" />
+    <ClInclude Include="inc\Ship.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Ship.cpp" />
+    <ClCompile Include="src\iPhysicsObject.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\GUI.cpp" />
+    <ClCompile Include="src\Render.cpp" />
     <ClCompile Include="src\Shellcore-Revival.cpp" />
     <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
