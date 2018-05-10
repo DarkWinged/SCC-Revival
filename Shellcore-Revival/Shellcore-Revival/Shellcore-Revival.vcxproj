@@ -86,11 +86,11 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <CompileAs>CompileAsCpp</CompileAs>
-      <AdditionalIncludeDirectories>C:\Users\Levi\source\repos\SCC-Revival\Libs\glew-2.1.0\include;C:\Users\Levi\source\repos\SCC-Revival\Libs\opengl\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glew-2.1.0\include;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glfw-3.2.1.bin.WIN32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link />
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\Levi\source\repos\SCC-Revival\Libs\glew-2.1.0\lib\Release\Win32;C:\Users\Levi\source\repos\SCC-Revival\Libs\opengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glew-2.1.0\lib\Release\Win32;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glfw-3.2.1.bin.WIN32\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -111,12 +111,12 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <CompileAs>CompileAsCpp</CompileAs>
-      <AdditionalIncludeDirectories>C:\Users\Levi\source\repos\SCC-Revival\Libs\glew-2.1.0\include;C:\Users\Levi\source\repos\SCC-Revival\Libs\opengl\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glew-2.1.0\include;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glfw-3.2.1.bin.WIN32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\Levi\source\repos\SCC-Revival\Libs\glew-2.1.0\lib\Release\Win32;C:\Users\Levi\source\repos\SCC-Revival\Libs\opengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glew-2.1.0\lib\Release\Win32;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glfw-3.2.1.bin.WIN32\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
