@@ -1,5 +1,4 @@
-#include <stdafx.h>
-#include <Render.h>
+#include <Render.hpp>
 
 namespace SCC_R {
 	namespace Graphics {

@@ -1,5 +1,4 @@
-#include <stdafx.h>
-#include <Ship.h>
+#include <Ship.hpp>
 
 namespace SCC_R {
 	namespace Physics {
