@@ -1,6 +1,6 @@
 #pragma once
 
-#include <iPhysicsObject.h>
+#include <iPhysicsObject.hpp>
 
 namespace SCC_R {
 	namespace Physics {

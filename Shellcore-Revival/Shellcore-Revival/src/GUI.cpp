@@ -1,5 +1,4 @@
-#include <stdafx.h>
-#include <GUI.h>
+#include <GUI.hpp>
 
 
 namespace SCC_R {

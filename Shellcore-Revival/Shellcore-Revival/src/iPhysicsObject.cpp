@@ -1,5 +1,4 @@
-#include <stdafx.h>
-#include <iPhysicsObject.h>
+#include <iPhysicsObject.hpp>
 
 
 namespace SCC_R {
