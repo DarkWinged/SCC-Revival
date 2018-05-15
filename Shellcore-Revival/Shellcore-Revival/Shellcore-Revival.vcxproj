@@ -213,20 +213,32 @@
     <Image Include="assets\images\turret-4.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\Debug.hpp" />
+    <ClInclude Include="inc\Asset.hpp" />
+    <ClInclude Include="inc\AssetManager.hpp" />
     <ClInclude Include="inc\Engine.hpp" />
     <ClInclude Include="inc\GUI.hpp" />
     <ClInclude Include="inc\iPhysicsObject.hpp" />
     <ClInclude Include="inc\Math.hpp" />
     <ClInclude Include="inc\Render.hpp" />
     <ClInclude Include="inc\Ship.hpp" />
+    <ClInclude Include="inc\Structs.hpp" />
+    <ClInclude Include="inc\ShaderManager.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ShaderManager.cpp" />
+    <ClCompile Include="src\Debug.cpp" />
+    <ClCompile Include="src\Asset.cpp" />
+    <ClCompile Include="src\AssetManager.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\GUI.cpp" />
     <ClCompile Include="src\iPhysicsObject.cpp" />
     <ClCompile Include="src\Render.cpp" />
     <ClCompile Include="src\Shellcore-Revival.cpp" />
     <ClCompile Include="src\Ship.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\test.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
