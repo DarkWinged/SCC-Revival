@@ -20,10 +20,6 @@ namespace SCC_R {
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 			glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-#ifdef __APPLE__
-			glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // uncomment this statement to fix compilation on OS X
-#endif
-
 			window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "SCC_R", NULL, NULL);
 			if (window == NULL)
 			{
@@ -41,6 +37,8 @@ namespace SCC_R {
 				std::cout << "Failed to initialize glew" << std::endl;
 				return false;
 			}
+
+			//GLDebug(glEnableClientState(GL_VERTEX_ARRAY));
 
 			std::cout << glGetString(GL_VERSION) << std::endl;
 			return true;
@@ -61,28 +59,34 @@ namespace SCC_R {
 				2, 3 ,0
 			};
 
-			unsigned int vbId;
-			GLDebug(glGenBuffers(1,&vbId));
-			GLDebug(glBindBuffer(GL_ARRAY_BUFFER, vbId));
+			unsigned int vbo;
+			GLDebug(glGenBuffers(1,&vbo));
+			GLDebug(glBindBuffer(GL_ARRAY_BUFFER, vbo));
 			GLDebug(glBufferData(GL_ARRAY_BUFFER, 4 * 2 * sizeof(float), verticies, GL_STATIC_DRAW));
 
-			GLDebug(glEnableVertexAttribArray(0));
-			GLDebug(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float),0));
+			GLuint vao;
+			glGenVertexArrays(1, &vao);
+			glBindVertexArray(vao);
 
-			unsigned int ibId;
-			GLDebug(glGenBuffers(1, &ibId));
-			GLDebug(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibId));
+			GLDebug(glEnableVertexAttribArray(0));
+			GLDebug(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float), 0));
+
+			unsigned int ibo;
+			GLDebug(glGenBuffers(1, &ibo));
+			GLDebug(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo));
 			GLDebug(glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indices, GL_STATIC_DRAW));
+
 
 			ShaserProgramSource source = shaderManager.ParseShader("assets/shaders/test.shader");
 			unsigned int shader = shaderManager.CreateShaderProgram(source.VertexSource, source.FragmentSource);
-			glUseProgram(shader);
+			
+			GLDebug(glUseProgram(shader));
 			
 			while (!glfwWindowShouldClose(window))
 			{
 				processInput();
 
-				GLDebug(glClearColor(0.2f, 0.2f, 0.2f, 0.0f));
+				GLDebug(glClearColor(0.2f, 0.2f, 0.2f, 1.0f));
 				GLDebug(glClear(GL_COLOR_BUFFER_BIT));
 
 				GLDebug(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));

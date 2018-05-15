@@ -16,10 +16,19 @@ namespace SCC_R {
 	{
 		while (GLenum error = glGetError())
 		{
-			std::cout << "[Opengl Error] (" << error << "): " << function <<
+			std::cout << "[Opengl Error] (" << Debug::int_to_hex(error) << "): " << function <<
 				" " << file << ":" << line << std::endl;
 			return false;
 		}
 		return true;
+	}
+
+	std::string Debug::int_to_hex(int i)
+	{
+		std::stringstream stream;
+		stream << "0x0"
+			//<< std::setfill('0') << std::setw(sizeof(int) * 2)
+			<< std::hex << i;
+		return stream.str();
 	}
 }

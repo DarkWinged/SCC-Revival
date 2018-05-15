@@ -3,6 +3,9 @@
 #include <GL/glew.h>
 
 #include <iostream>
+#include <sstream>
+#include <fstream>
+#include <iomanip>
 
 #define ASSERT(x) if (!(x)) __debugbreak();
 #define GLDebug(x) Debug::GLClearError();\
@@ -15,5 +18,6 @@ namespace SCC_R {
 	public:
 		static void GLClearError();
 		static bool GLLogCall(const char* function, const char* file, int line);
+		static std::string int_to_hex(int i);
 	};
 }
