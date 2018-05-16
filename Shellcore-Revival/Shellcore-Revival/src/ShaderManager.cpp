@@ -23,6 +23,7 @@ namespace SCC_R {
 
 			GLDebug(glAttachShader(program, vs));
 			GLDebug(glAttachShader(program, fs));
+			GLDebug(glLinkProgram(program));
 			GLDebug(glValidateProgram(program));
 			GLDebug(glDeleteShader(vs));
 			GLDebug(glDeleteShader(fs));

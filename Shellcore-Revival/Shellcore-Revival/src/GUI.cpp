@@ -53,10 +53,10 @@ namespace SCC_R {
 				-0.5f,  0.5f
 			};
 			
-			unsigned int indices[]
+			unsigned int indices[3]
 			{
-				0, 1, 2,
-				2, 3 ,0
+				0, 1, 2//,
+				//2, 3 ,0
 			};
 
 			unsigned int vbo;
@@ -64,9 +64,9 @@ namespace SCC_R {
 			GLDebug(glBindBuffer(GL_ARRAY_BUFFER, vbo));
 			GLDebug(glBufferData(GL_ARRAY_BUFFER, 4 * 2 * sizeof(float), verticies, GL_STATIC_DRAW));
 
-			GLuint vao;
-			glGenVertexArrays(1, &vao);
-			glBindVertexArray(vao);
+			unsigned int vao;
+			GLDebug(glGenVertexArrays(1, &vao));
+			GLDebug(glBindVertexArray(vao));
 
 			GLDebug(glEnableVertexAttribArray(0));
 			GLDebug(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float), 0));
@@ -74,22 +74,23 @@ namespace SCC_R {
 			unsigned int ibo;
 			GLDebug(glGenBuffers(1, &ibo));
 			GLDebug(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo));
-			GLDebug(glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indices, GL_STATIC_DRAW));
+			GLDebug(glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3 * sizeof(unsigned int), indices, GL_STATIC_DRAW));
 
 
-			ShaserProgramSource source = shaderManager.ParseShader("assets/shaders/test.shader");
-			unsigned int shader = shaderManager.CreateShaderProgram(source.VertexSource, source.FragmentSource);
+			GLDebug(ShaserProgramSource source = shaderManager.ParseShader("assets/shaders/test.shader"));
+			GLDebug(unsigned int shader = shaderManager.CreateShaderProgram(source.VertexSource, source.FragmentSource));
 			
+			GLDebug(glValidateProgram(shader));
 			GLDebug(glUseProgram(shader));
 			
 			while (!glfwWindowShouldClose(window))
 			{
 				processInput();
 
-				GLDebug(glClearColor(0.2f, 0.2f, 0.2f, 1.0f));
+				GLDebug(glClearColor(1.0f, 1.0f, 1.0f, 1.0f));
 				GLDebug(glClear(GL_COLOR_BUFFER_BIT));
 
-				GLDebug(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+				GLDebug(glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr));
 				
 				GLDebug(glfwSwapBuffers(window));
 				GLDebug(glfwPollEvents());

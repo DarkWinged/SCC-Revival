@@ -27,7 +27,6 @@ namespace SCC_R {
 	{
 		std::stringstream stream;
 		stream << "0x0"
-			//<< std::setfill('0') << std::setw(sizeof(int) * 2)
 			<< std::hex << i;
 		return stream.str();
 	}
