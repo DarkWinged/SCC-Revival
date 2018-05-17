@@ -31,15 +31,10 @@
 *.out
 *.app
 
-/Libs
 /Shellcore-Revival/.vs/Shellcore-Revival/v15
-/Shellcore-Revival/.vs/Shellcore-Revival/v15/.suo
+/Shellcore-Revival/Shellcore-Revival.vcxproj.user
+/Shellcore-Revival/Debug
 /Shellcore-Revival/Shellcore-Revival/Debug
-/ShellCoreCommandCpp/.vs/Shellcore-Revival/v15
-/ShellCoreCommandCpp/Debug
-/ShellCoreCommandCpp/ipch/shellcorecommandc++-8d62cf4d
-/ShellCoreCommandCpp/Release
-/ShellCoreCommandCpp/Shellcore-Revival/Release
-/ShellCoreCommandCpp/Shellcore-Revival/Shellcore-Revival.vcxproj
-*.user
-/ShellCoreCommandCpp/Shellcore-Revival/Debug
+/Shellcore-Revival/Libs
+/Libs
+/ShellCoreCommandCpp

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{8D3338A3-E476-4CD8-AD1A-64297D4E3076}</ProjectGuid>
+    <RootNamespace>ShellcoreRevival</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Shellcore-Revival\Shellcore-Revival\inc;$(IncludePath)</IncludePath>
+    <SourcePath>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Shellcore-Revival\Shellcore-Revival\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(ProjectDir)inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glew-2.1.0\include;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glfw-3.2.1.bin.WIN32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link />
+    <Link>
+      <AdditionalLibraryDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glew-2.1.0\lib\Release\Win32;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glfw-3.2.1.bin.WIN32\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glew-2.1.0\include;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glfw-3.2.1.bin.WIN32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glew-2.1.0\lib\Release\Win32;$(HOMEDRIVE)$(HOMEPATH)\source\repos\SCC-Revival\Libs\glfw-3.2.1.bin.WIN32\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Image Include="assets\images\Core-0.png" />
+    <Image Include="assets\images\Core-1.png" />
+    <Image Include="assets\images\Core-2.png" />
+    <Image Include="assets\images\Core-3.png" />
+    <Image Include="assets\images\drone-0.png" />
+    <Image Include="assets\images\drone-1.png" />
+    <Image Include="assets\images\drone-2.png" />
+    <Image Include="assets\images\drone-3.png" />
+    <Image Include="assets\images\module-0.png" />
+    <Image Include="assets\images\module-1.png" />
+    <Image Include="assets\images\module-10.png" />
+    <Image Include="assets\images\module-11.png" />
+    <Image Include="assets\images\module-12.png" />
+    <Image Include="assets\images\module-2.png" />
+    <Image Include="assets\images\module-3.png" />
+    <Image Include="assets\images\module-4.png" />
+    <Image Include="assets\images\module-5.png" />
+    <Image Include="assets\images\module-6.png" />
+    <Image Include="assets\images\module-7.png" />
+    <Image Include="assets\images\module-8.png" />
+    <Image Include="assets\images\module-9.png" />
+    <Image Include="assets\images\section-0.png" />
+    <Image Include="assets\images\section-1.png" />
+    <Image Include="assets\images\section-10.png" />
+    <Image Include="assets\images\section-11.png" />
+    <Image Include="assets\images\section-12.png" />
+    <Image Include="assets\images\section-13.png" />
+    <Image Include="assets\images\section-14.png" />
+    <Image Include="assets\images\section-15.png" />
+    <Image Include="assets\images\section-16.png" />
+    <Image Include="assets\images\section-17.png" />
+    <Image Include="assets\images\section-18.png" />
+    <Image Include="assets\images\section-19.png" />
+    <Image Include="assets\images\section-2.png" />
+    <Image Include="assets\images\section-20.png" />
+    <Image Include="assets\images\section-21.png" />
+    <Image Include="assets\images\section-22.png" />
+    <Image Include="assets\images\section-23.png" />
+    <Image Include="assets\images\section-24.png" />
+    <Image Include="assets\images\section-25.png" />
+    <Image Include="assets\images\section-26.png" />
+    <Image Include="assets\images\section-27.png" />
+    <Image Include="assets\images\section-28.png" />
+    <Image Include="assets\images\section-29.png" />
+    <Image Include="assets\images\section-3.png" />
+    <Image Include="assets\images\section-30.png" />
+    <Image Include="assets\images\section-31.png" />
+    <Image Include="assets\images\section-32.png" />
+    <Image Include="assets\images\section-33.png" />
+    <Image Include="assets\images\section-34.png" />
+    <Image Include="assets\images\section-35.png" />
+    <Image Include="assets\images\section-36.png" />
+    <Image Include="assets\images\section-37.png" />
+    <Image Include="assets\images\section-38.png" />
+    <Image Include="assets\images\section-39.png" />
+    <Image Include="assets\images\section-4.png" />
+    <Image Include="assets\images\section-40.png" />
+    <Image Include="assets\images\section-41.png" />
+    <Image Include="assets\images\section-42.png" />
+    <Image Include="assets\images\section-43.png" />
+    <Image Include="assets\images\section-44.png" />
+    <Image Include="assets\images\section-5.png" />
+    <Image Include="assets\images\section-6.png" />
+    <Image Include="assets\images\section-7.png" />
+    <Image Include="assets\images\section-8.png" />
+    <Image Include="assets\images\section-9.png" />
+    <Image Include="assets\images\tank-0.png" />
+    <Image Include="assets\images\tank-1.png" />
+    <Image Include="assets\images\tank-2.png" />
+    <Image Include="assets\images\tank-3.png" />
+    <Image Include="assets\images\tank-4.png" />
+    <Image Include="assets\images\turret-0.png" />
+    <Image Include="assets\images\turret-1.png" />
+    <Image Include="assets\images\turret-2.png" />
+    <Image Include="assets\images\turret-3.png" />
+    <Image Include="assets\images\turret-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\Debug.hpp" />
+    <ClInclude Include="inc\Asset.hpp" />
+    <ClInclude Include="inc\AssetManager.hpp" />
+    <ClInclude Include="inc\Engine.hpp" />
+    <ClInclude Include="inc\GUI.hpp" />
+    <ClInclude Include="inc\iPhysicsObject.hpp" />
+    <ClInclude Include="inc\Math.hpp" />
+    <ClInclude Include="inc\Render.hpp" />
+    <ClInclude Include="inc\Ship.hpp" />
+    <ClInclude Include="inc\Structs.hpp" />
+    <ClInclude Include="inc\ShaderManager.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ShaderManager.cpp" />
+    <ClCompile Include="src\Debug.cpp" />
+    <ClCompile Include="src\Asset.cpp" />
+    <ClCompile Include="src\AssetManager.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\GUI.cpp" />
+    <ClCompile Include="src\iPhysicsObject.cpp" />
+    <ClCompile Include="src\Render.cpp" />
+    <ClCompile Include="src\Shellcore-Revival.cpp" />
+    <ClCompile Include="src\Ship.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\test.shader" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
