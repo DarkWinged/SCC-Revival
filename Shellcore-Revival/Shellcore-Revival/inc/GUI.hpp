@@ -24,7 +24,7 @@ namespace SCC_R {
 			void processInput();
 
 			const unsigned int SCR_WIDTH = 960;
-			const unsigned int SCR_HEIGHT = 540;
+			const unsigned int SCR_HEIGHT = 680;
 			GLFWwindow* window;
 			Graphics::ShaderManager shaderManager;
 		};

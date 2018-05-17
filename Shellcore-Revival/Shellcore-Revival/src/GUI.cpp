@@ -46,35 +46,37 @@ namespace SCC_R {
 
 		int GUI::loop()
 		{
+			float x = 0.5;
 			float verticies[8] = {
-				-0.5f, -0.5f,
-				0.5f, -0.5f,
-				0.5f,  0.5f
-				-0.5f,  0.5f
+				-x, -x,
+				x, -x,
+				x,  x,
+				-x,  x
 			};
 			
-			unsigned int indices[3]
+			unsigned int indices[6]
 			{
-				0, 1, 2//,
-				//2, 3 ,0
+				0, 1, 2,
+				2, 3 ,0
 			};
 
 			unsigned int vbo;
 			GLDebug(glGenBuffers(1,&vbo));
 			GLDebug(glBindBuffer(GL_ARRAY_BUFFER, vbo));
-			GLDebug(glBufferData(GL_ARRAY_BUFFER, 4 * 2 * sizeof(float), verticies, GL_STATIC_DRAW));
+			GLDebug(glBufferData(GL_ARRAY_BUFFER, sizeof(verticies), verticies, GL_STATIC_DRAW));
+			
 
 			unsigned int vao;
 			GLDebug(glGenVertexArrays(1, &vao));
 			GLDebug(glBindVertexArray(vao));
 
 			GLDebug(glEnableVertexAttribArray(0));
-			GLDebug(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float), 0));
+			GLDebug(glVertexAttribPointer(0, 2, GL_INT, GL_TRUE, 2*sizeof(float), 0));
 
 			unsigned int ibo;
 			GLDebug(glGenBuffers(1, &ibo));
 			GLDebug(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo));
-			GLDebug(glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3 * sizeof(unsigned int), indices, GL_STATIC_DRAW));
+			GLDebug(glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW));
 
 
 			GLDebug(ShaserProgramSource source = shaderManager.ParseShader("assets/shaders/test.shader"));
@@ -87,10 +89,10 @@ namespace SCC_R {
 			{
 				processInput();
 
-				GLDebug(glClearColor(1.0f, 1.0f, 1.0f, 1.0f));
+				GLDebug(glClearColor(0.2f, 0.2f, 0.2f, 1.0f));
 				GLDebug(glClear(GL_COLOR_BUFFER_BIT));
 
-				GLDebug(glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, nullptr));
+				GLDebug(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
 				
 				GLDebug(glfwSwapBuffers(window));
 				GLDebug(glfwPollEvents());
